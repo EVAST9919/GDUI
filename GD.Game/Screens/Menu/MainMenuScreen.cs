@@ -2,6 +2,7 @@
 using GD.Game.Overlays;
 using GD.Game.Overlays.Settings;
 using GD.Game.Screens.More;
+using GD.Game.Screens.Profile;
 using GD.Game.Screens.Select;
 using GD.Game.UserInterface;
 using osu.Framework.Allocation;
@@ -45,7 +46,8 @@ namespace GD.Game.Screens.Menu
                     {
                         new TexturedGDButton("customize")
                         {
-                            Anchor = Anchor.Centre
+                            Anchor = Anchor.Centre,
+                            ClickAction = () => this.Push(new ProfileScreen())
                         },
                         new TexturedGDButton("play")
                         {
