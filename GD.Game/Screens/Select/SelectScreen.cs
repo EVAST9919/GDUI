@@ -91,7 +91,14 @@ namespace GD.Game.Screens.Select
                     Position = new Vector2(85),
                     Scale = new Vector2(0.83f),
                     ClickAction = this.Exit
-                }
+                },
+                new TexturedGDButton("info-icon")
+                {
+                    Anchor = Anchor.TopRight,
+                    Size = new Vector2(93),
+                    Position = new Vector2(-70, 70),
+                    Scale = new Vector2(0.83f)
+                },
             });
         }
 
