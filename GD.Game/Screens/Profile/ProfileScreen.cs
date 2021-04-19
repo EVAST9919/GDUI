@@ -6,7 +6,6 @@ using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Effects;
 using osu.Framework.Graphics.Shapes;
-using osu.Framework.Graphics.Sprites;
 using osuTK;
 using osuTK.Graphics;
 
@@ -27,13 +26,12 @@ namespace GD.Game.Screens.Profile
                 {
                     Origin = Anchor.BottomLeft
                 },
-                new Sprite
+                new GroundLine
                 {
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,
-                    Size = new Vector2(1300, 6),
-                    Y = -165,
-                    Texture = Textures.Get("ground-line")
+                    Size = new Vector2(1380, 5),
+                    Y = -170,
                 },
                 new TexturedGDButton("shards")
                 {

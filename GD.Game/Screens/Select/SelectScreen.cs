@@ -3,7 +3,6 @@ using GD.Game.Screens.Select.Carousel;
 using GD.Game.UserInterface;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
-using osu.Framework.Graphics.Sprites;
 using osuTK;
 using osuTK.Graphics;
 
@@ -27,14 +26,12 @@ namespace GD.Game.Screens.Select
                     Y = 30,
                     Alpha = 0.5f
                 },
-                new Sprite
+                new GroundLine
                 {
                     Anchor = Anchor.BottomCentre,
                     Origin = Anchor.BottomCentre,
-                    Size = new Vector2(1300, 4),
+                    Size = new Vector2(1380, 4),
                     Y = -165,
-                    Alpha = 0.9f,
-                    Texture = Textures.Get("ground-line")
                 },
                 new GDSpriteText(42)
                 {

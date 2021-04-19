@@ -4,7 +4,6 @@ using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Colour;
 using osu.Framework.Graphics.Shapes;
-using osu.Framework.Graphics.Textures;
 using osu.Framework.Screens;
 using osuTK;
 using osuTK.Graphics;
@@ -18,9 +17,6 @@ namespace GD.Game.Screens
         protected abstract Color4 BackgroundColour { get; }
 
         protected Box Background { get; private set; }
-
-        [Resolved]
-        protected TextureStore Textures { get; private set; }
 
         [BackgroundDependencyLoader]
         private void load()
