@@ -4,6 +4,7 @@ using System;
 using osu.Framework.Input.Events;
 using osu.Framework.Bindables;
 using osuTK.Graphics;
+using osuTK.Input;
 
 namespace GD.Game.UserInterface
 {
@@ -66,7 +67,15 @@ namespace GD.Game.UserInterface
             }
         }
 
-        protected override bool OnHover(HoverEvent e) => true;
+        private bool considerForInput = false;
+
+        protected override bool OnHover(HoverEvent e)
+        {
+            if (considerForInput && enabled.Value && e.CurrentState.Mouse.Buttons.IsPressed(MouseButton.Left))
+                state.Value = ButtonState.ScaleUp;
+
+            return true;
+        }
 
         protected override void OnHoverLost(HoverLostEvent e)
         {
@@ -78,8 +87,11 @@ namespace GD.Game.UserInterface
         {
             base.OnMouseDown(e);
 
-            if (enabled.Value)
+            if (enabled.Value && e.Button == MouseButton.Left)
+            {
+                considerForInput = true;
                 state.Value = ButtonState.ScaleUp;
+            }
 
             return true;
         }
@@ -88,8 +100,10 @@ namespace GD.Game.UserInterface
         {
             base.OnMouseUp(e);
 
-            if (enabled.Value)
+            if (enabled.Value && e.Button == MouseButton.Left)
             {
+                considerForInput = false;
+
                 if (IsHovered)
                 {
                     state.Value = ButtonState.Idle;
