@@ -24,7 +24,7 @@ namespace GD.Game.Overlays
                 {
                     t.Anchor = Anchor.TopCentre;
                     t.Origin = Anchor.TopCentre;
-                    t.Y = 25;
+                    t.Y = 30;
                 }),
                 CreateWindowContent(),
                 new TexturedGDButton("cross")

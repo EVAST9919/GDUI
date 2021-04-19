@@ -37,7 +37,7 @@ namespace GD.Game.Overlays.Settings
                     RelativeSizeAxes = Axes.Both,
 
                 },
-                new GDSpriteText(90)
+                new GDSpriteText(70)
                 {
                     Text = "Settings",
                     Anchor = Anchor.TopCentre,

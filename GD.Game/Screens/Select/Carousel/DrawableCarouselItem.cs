@@ -44,13 +44,13 @@ namespace GD.Game.Screens.Select.Carousel
                 RelativeSizeAxes = Axes.X,
                 AutoSizeAxes = Axes.Y,
                 Direction = FillDirection.Vertical,
-                Spacing = new Vector2(0, 45),
+                Spacing = new Vector2(0, 55),
                 Children = new Drawable[]
                 {
                     new GDButton(1.05f)
                     {
                         RelativeSizeAxes = Axes.X,
-                        Height = 325,
+                        Height = 310,
                         Anchor = Anchor.TopCentre,
                         Origin = Anchor.TopCentre,
                         ClickAction = () =>
@@ -61,7 +61,7 @@ namespace GD.Game.Screens.Select.Carousel
                         {
                             RelativeSizeAxes = Axes.Both,
                             Masking = true,
-                            CornerRadius = 25,
+                            CornerRadius = 30,
                             Children = new Drawable[]
                             {
                                 new Box
@@ -73,13 +73,14 @@ namespace GD.Game.Screens.Select.Carousel
                                 {
                                     Anchor = Anchor.TopRight,
                                     Origin = Anchor.TopRight,
-                                    Margin = new MarginPadding { Top = 20, Right = 30 }
+                                    Margin = new MarginPadding { Top = 20, Right = 35 }
                                 },
-                                drawableDiff = new GDSpriteText(55)
+                                drawableDiff = new GDSpriteText(45)
                                 {
                                     Anchor = Anchor.TopRight,
                                     Origin = Anchor.TopRight,
-                                    Margin = new MarginPadding { Top = 15, Right = 90 }
+                                    Colour = Color4.Yellow,
+                                    Margin = new MarginPadding { Top = 15, Right = 85 }
                                 },
                                 new FillFlowContainer
                                 {
@@ -97,7 +98,7 @@ namespace GD.Game.Screens.Select.Carousel
                                             Size = new Vector2(110),
                                             Child = icon = new DiffIcon()
                                         },
-                                        drawableName = new GDSpriteText(105)
+                                        drawableName = new GDSpriteText(77)
                                         {
                                             Anchor = Anchor.Centre,
                                             Origin = Anchor.Centre
@@ -172,9 +173,10 @@ namespace GD.Game.Screens.Select.Carousel
                 RelativeSizeAxes = Axes.X;
                 AutoSizeAxes = Axes.Y;
                 Direction = FillDirection.Vertical;
+                Spacing = new Vector2(0, 15);
                 Children = new Drawable[]
                 {
-                    new GDSpriteText(55)
+                    new GDSpriteText(42)
                     {
                         Anchor = Anchor.TopCentre,
                         Origin = Anchor.TopCentre,
@@ -223,7 +225,7 @@ namespace GD.Game.Screens.Select.Carousel
                                     }
                                 }
                             },
-                            progressText = new GDSpriteText(55)
+                            progressText = new GDSpriteText(42)
                             {
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre

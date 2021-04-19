@@ -10,7 +10,7 @@ namespace GD.Game.Overlays
 {
     public class VideoSettingsOverlay : BrownOverlay
     {
-        protected override GDSpriteText CreateTitle() => new GDGoldSpriteText(70)
+        protected override GDSpriteText CreateTitle() => new GDGoldSpriteText(65)
         {
             Text = "Video Options"
         };

@@ -164,16 +164,17 @@ namespace GD.Game.Overlays.Settings
                     Origin = Anchor.BottomCentre,
                     RelativeSizeAxes = Axes.X,
                     AutoSizeAxes = Axes.Y,
+                    Y = -13,
                     Padding = new MarginPadding { Horizontal = 200 },
                     Child = new FillFlowContainer
                     {
                         RelativeSizeAxes = Axes.X,
                         AutoSizeAxes = Axes.Y,
                         Direction = FillDirection.Vertical,
-                        Spacing = new Vector2(0, 10),
+                        Spacing = new Vector2(0, 20),
                         Children = new Drawable[]
                         {
-                            new GDSpriteText(65)
+                            new GDSpriteText(50)
                             {
                                 Anchor = Anchor.TopCentre,
                                 Origin = Anchor.TopCentre,
@@ -185,7 +186,7 @@ namespace GD.Game.Overlays.Settings
                                 Origin = Anchor.TopCentre,
                                 Current = frameworkConfig.GetBindable<double>(FrameworkSetting.VolumeMusic)
                             },
-                            new GDSpriteText(65)
+                            new GDSpriteText(50)
                             {
                                 Anchor = Anchor.TopCentre,
                                 Origin = Anchor.TopCentre,

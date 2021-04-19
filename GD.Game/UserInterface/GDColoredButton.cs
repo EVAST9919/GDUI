@@ -17,7 +17,7 @@ namespace GD.Game.UserInterface
         private readonly ButtonColour buttonColour;
         private readonly float textSize;
 
-        public GDColoredButton(string text, ButtonColour buttonColour, float textSize = 90)
+        public GDColoredButton(string text, ButtonColour buttonColour, float textSize = 85)
         {
             this.text = text;
             this.buttonColour = buttonColour;

@@ -65,7 +65,7 @@ namespace GD.Game.Overlays.Settings.Items.Controls
                                 Size = new Vector2(58, 84),
                                 ClickAction = () => changeValue(-1)
                             },
-                            drawableValue = new GDSpriteText(80)
+                            drawableValue = new GDSpriteText(60)
                             {
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre

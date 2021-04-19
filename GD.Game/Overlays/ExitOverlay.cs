@@ -24,7 +24,7 @@ namespace GD.Game.Overlays
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre
                 },
-                new GDGoldSpriteText(80)
+                new GDGoldSpriteText(75)
                 {
                     Text = "Quit Game",
                     Anchor = Anchor.TopCentre,
@@ -47,14 +47,14 @@ namespace GD.Game.Overlays
                 {
                     Anchor = Anchor.BottomCentre,
                     Width = 350,
-                    Position = new Vector2(-140, -110),
+                    Position = new Vector2(-130, -105),
                     ClickAction = () => IsVisible.Value = false
                 },
                 new GDColoredButton("Yes", ButtonColour.Green)
                 {
                     Anchor = Anchor.BottomCentre,
                     Width = 220,
-                    Position = new Vector2(190, -110),
+                    Position = new Vector2(200, -105),
                     ClickAction = () => ConfirmAction?.Invoke()
                 }
             }

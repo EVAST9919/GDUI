@@ -50,12 +50,12 @@ namespace GD.Game.Screens.Select
                     Alpha = 0.9f,
                     Texture = textures.Get("ground-line")
                 },
-                new GDSpriteText(55)
+                new GDSpriteText(42)
                 {
                     Anchor = Anchor.BottomCentre,
                     Origin = Anchor.BottomCentre,
                     Text = "Download the soundtracks",
-                    Y = -85
+                    Y = -100
                 },
                 new GDSprite("select-corner")
                 {
