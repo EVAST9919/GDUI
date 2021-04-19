@@ -1,4 +1,5 @@
 ﻿using GD.Game.Graphics;
+using GD.Game.Screens.Search;
 using GD.Game.UserInterface;
 using osu.Framework.Allocation;
 using osu.Framework.Extensions.Color4Extensions;
@@ -89,6 +90,9 @@ namespace GD.Game.Screens.More
                                 new BigButton("fame"),
                                 new BigButton("packs"),
                                 new BigButton("search")
+                                {
+                                    ClickAction = () => this.Push(new SearchScreen())
+                                }
                             }
                         }
                     }
