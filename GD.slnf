@@ -1,0 +1,11 @@
+﻿{
+  "solution": {
+    "path": "GD.sln",
+    "projects": [
+      "GD.Desktop\\GD.Desktop.csproj",
+      "GD.Game\\GD.Game.csproj",
+      "GD.Resources\\GD.Resources.csproj"
+      "GD.Tests\\GD.Tests.csproj",
+    ]
+  }
+}
