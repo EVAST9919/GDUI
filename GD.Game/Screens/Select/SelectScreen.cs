@@ -1,39 +1,25 @@
 ﻿using GD.Game.Graphics;
 using GD.Game.Screens.Select.Carousel;
 using GD.Game.UserInterface;
-using osu.Framework.Allocation;
-using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
-using osu.Framework.Graphics.Colour;
-using osu.Framework.Graphics.Shapes;
+using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Sprites;
-using osu.Framework.Graphics.Textures;
-using osu.Framework.Screens;
 using osuTK;
 using osuTK.Graphics;
 
 namespace GD.Game.Screens.Select
 {
-    public class SelectScreen : GDScreen
+    public class SelectScreen : GDMenuScreen
     {
-        private Box bg;
-        private GDSprite ground;
+        protected override BackButtonColour BackButtonColour => BackButtonColour.Green;
 
-        [BackgroundDependencyLoader]
-        private void load(TextureStore textures)
+        protected override Color4 BackgroundColour => Color4.White;
+
+        protected override Drawable CreateContent() => new Container
         {
-            AddRangeInternal(new Drawable[]
+            RelativeSizeAxes = Axes.Both,
+            Children = new Drawable[]
             {
-                bg = new Box
-                {
-                    RelativeSizeAxes = Axes.Both,
-                    Colour = Color4.White
-                },
-                new Box
-                {
-                    RelativeSizeAxes = Axes.Both,
-                    Colour = ColourInfo.GradientVertical(new Color4(0, 0, 0, 0), Color4.Black.Opacity(0.5f))
-                },
                 ground = new GDSprite("select-ground", baseScale: 1f, useLarge: true)
                 {
                     Anchor = Anchor.BottomCentre,
@@ -48,7 +34,7 @@ namespace GD.Game.Screens.Select
                     Size = new Vector2(1300, 4),
                     Y = -165,
                     Alpha = 0.9f,
-                    Texture = textures.Get("ground-line")
+                    Texture = Textures.Get("ground-line")
                 },
                 new GDSpriteText(42)
                 {
@@ -85,18 +71,15 @@ namespace GD.Game.Screens.Select
                     },
                     ColourChanged = onColourChanged
                 },
-                new TexturedGDButton("back-arrow")
-                {
-                    Position = new Vector2(85),
-                    ClickAction = this.Exit
-                },
                 new TexturedGDButton("info-icon")
                 {
                     Anchor = Anchor.TopRight,
                     Position = new Vector2(-70, 70)
-                },
-            });
-        }
+                }
+            }
+        };
+
+        private GDSprite ground;
 
         private bool firstChange = true;
 
@@ -104,13 +87,13 @@ namespace GD.Game.Screens.Select
         {
             if (firstChange)
             {
-                bg.Colour = colour;
+                Background.Colour = colour;
                 ground.Colour = colour;
                 firstChange = false;
             }
             else
             {
-                bg.FadeColour(colour, 500, Easing.Out);
+                Background.FadeColour(colour, 500, Easing.Out);
                 ground.FadeColour(colour, 500, Easing.Out);
             }
         }
