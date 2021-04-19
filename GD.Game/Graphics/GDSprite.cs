@@ -12,7 +12,7 @@ namespace GD.Game.Graphics
         private readonly FlipOrientation flipOrientation;
         private readonly float baseScale;
 
-        public GDSprite(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.83f, bool useLarge = false)
+        public GDSprite(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.84f, bool useLarge = false)
         {
             this.textureName = textureName;
             this.flipOrientation = flipOrientation;

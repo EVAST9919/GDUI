@@ -1,46 +1,35 @@
-﻿using osu.Framework.Allocation;
-using osu.Framework.Graphics.Sprites;
-using osu.Framework.Graphics.Textures;
-using osu.Framework.Graphics;
+﻿using osu.Framework.Graphics;
 using GD.Game.Graphics;
-using osuTK;
 
 namespace GD.Game.UserInterface
 {
     public class TexturedGDButton : GDButton
     {
-        private readonly string textureName;
-        private readonly FlipOrientation flipOrientation;
-
-        public TexturedGDButton(string textureName, FlipOrientation flipOrientation = FlipOrientation.None)
+        public TexturedGDButton(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.84f, bool useLarge = false)
         {
-            this.textureName = textureName;
-            this.flipOrientation = flipOrientation;
-        }
+            Content.RelativeSizeAxes = Axes.None;
+            Content.AutoSizeAxes = Axes.Both;
 
-        [BackgroundDependencyLoader]
-        private void load(TextureStore textures)
-        {
-            var s = new Sprite
-            {
-                Anchor = Anchor.Centre,
-                Origin = Anchor.Centre,
-                RelativeSizeAxes = Axes.Both,
-                Texture = textures.Get(textureName)
-            };
+            var s = new GDSprite(textureName, flipOrientation, baseScale, useLarge);
 
             switch (flipOrientation)
             {
                 case FlipOrientation.Horizontal:
-                    s.Scale = new Vector2(-1, 1);
+                    s.Origin = Anchor.TopRight;
                     break;
 
                 case FlipOrientation.Vertical:
-                    s.Scale = new Vector2(1, -1);
+                    s.Origin = Anchor.BottomLeft;
                     break;
             }
 
-            Add(s);
+            Child = s;
+        }
+
+        protected override void LoadComplete()
+        {
+            base.LoadComplete();
+            Size = Content.Size;
         }
     }
 }

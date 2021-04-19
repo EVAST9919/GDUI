@@ -51,9 +51,7 @@ namespace GD.Game.Overlays.Settings
                 new TexturedGDButton("back-arrow-pink")
                 {
                     ClickAction = () => IsVisible.Value = false,
-                    Size = new Vector2(124, 150),
                     Position = new Vector2(85),
-                    Scale = new Vector2(0.83f)
                 }
             }
         };

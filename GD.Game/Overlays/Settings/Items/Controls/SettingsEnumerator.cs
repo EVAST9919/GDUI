@@ -4,7 +4,6 @@ using osu.Framework.Bindables;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.UserInterface;
 using osu.Framework.Graphics;
-using osuTK;
 using GD.Game.Graphics;
 using GD.Game.UserInterface;
 
@@ -62,7 +61,6 @@ namespace GD.Game.Overlays.Settings.Items.Controls
                             new TexturedGDButton("edit-arrow")
                             {
                                 Anchor = Anchor.Centre,
-                                Size = new Vector2(58, 84),
                                 ClickAction = () => changeValue(-1)
                             },
                             drawableValue = new GDSpriteText(60)
@@ -73,7 +71,6 @@ namespace GD.Game.Overlays.Settings.Items.Controls
                             new TexturedGDButton("edit-arrow", FlipOrientation.Horizontal)
                             {
                                 Anchor = Anchor.Centre,
-                                Size = new Vector2(58, 84),
                                 ClickAction = () => changeValue(1)
                             }
                         }

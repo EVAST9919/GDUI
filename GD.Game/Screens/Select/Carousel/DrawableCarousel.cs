@@ -38,19 +38,15 @@ namespace GD.Game.Screens.Select.Carousel
                 new TexturedGDButton("carousel-button", FlipOrientation.Horizontal)
                 {
                     Anchor = Anchor.CentreLeft,
-                    Origin = Anchor.CentreLeft,
-                    Scale = new Vector2(0.83f),
-                    Size = new Vector2(106, 239),
-                    X = 40,
+                    X = 85,
+                    Y = 10,
                     ClickAction = () => selectPrev()
                 },
                 new TexturedGDButton("carousel-button")
                 {
                     Anchor = Anchor.CentreRight,
-                    Origin = Anchor.CentreRight,
-                    Scale = new Vector2(0.83f),
-                    Size = new Vector2(106, 239),
-                    X = -40,
+                    X = -85,
+                    Y = 10,
                     ClickAction = () => selectNext()
                 },
                 circlesFlow = new FillFlowContainer

@@ -35,7 +35,7 @@ namespace GD.Game.Screens.Select.Carousel
 
             Anchor = Anchor.Centre;
             Origin = Anchor.Centre;
-            Y = -40;
+            Y = -30;
             RelativePositionAxes = Axes.X;
             Width = 1150;
             AutoSizeAxes = Axes.Y;

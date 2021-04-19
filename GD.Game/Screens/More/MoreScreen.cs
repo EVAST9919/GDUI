@@ -95,9 +95,7 @@ namespace GD.Game.Screens.More
                 },
                 new TexturedGDButton("back-arrow-pink")
                 {
-                    Size = new Vector2(124, 151),
                     Position = new Vector2(85),
-                    Scale = new Vector2(0.83f),
                     ClickAction = this.Exit
                 }
             });
@@ -106,10 +104,9 @@ namespace GD.Game.Screens.More
         private class BigButton : TexturedGDButton
         {
             public BigButton(string textureName)
-                : base($"more-buttons/{textureName}")
+                : base($"more-buttons/{textureName}", baseScale: 0.72f)
             {
                 Anchor = Anchor.Centre;
-                Size = new Vector2(280);
             }
         }
     }

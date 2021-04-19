@@ -45,19 +45,16 @@ namespace GD.Game.Screens.Menu
                     {
                         new TexturedGDButton("customize")
                         {
-                            Anchor = Anchor.Centre,
-                            Size = new Vector2(220)
+                            Anchor = Anchor.Centre
                         },
                         new TexturedGDButton("play")
                         {
                             Anchor = Anchor.Centre,
-                            Size = new Vector2(350),
                             ClickAction = () => this.Push(new SelectScreen())
                         },
                         new TexturedGDButton("more")
                         {
                             Anchor = Anchor.Centre,
-                            Size = new Vector2(220),
                             ClickAction = () => this.Push(new MoreScreen())
                         }
                     }
@@ -69,40 +66,30 @@ namespace GD.Game.Screens.Menu
                     Direction = FillDirection.Horizontal,
                     AutoSizeAxes = Axes.Both,
                     Spacing = new Vector2(20),
-                    Y = -65,
+                    Y = -55,
                     Children = new[]
                     {
                         new TexturedGDButton("leaderboard")
                         {
-                            Anchor = Anchor.Centre,
-                            Size = new Vector2(195, 201),
-                            Scale = new Vector2(0.85f)
+                            Anchor = Anchor.Centre
                         },
                         new TexturedGDButton("settings")
                         {
                             Anchor = Anchor.Centre,
-                            Size = new Vector2(195, 201),
-                            Scale = new Vector2(0.85f),
                             ClickAction = () => settingsOverlay?.Show()
                         },
                         new TexturedGDButton("statistics")
                         {
-                            Anchor = Anchor.Centre,
-                            Size = new Vector2(195, 201),
-                            Scale = new Vector2(0.85f)
+                            Anchor = Anchor.Centre
                         },
                         new TexturedGDButton("new-grounds")
                         {
-                            Anchor = Anchor.Centre,
-                            Size = new Vector2(195, 201),
-                            Scale = new Vector2(0.9f)
+                            Anchor = Anchor.Centre
                         }
                     }
                 },
-                new TexturedGDButton("cross")
+                new TexturedGDButton("cross", baseScale: 0.6f)
                 {
-                    Size = new Vector2(180, 183),
-                    Scale = new Vector2(0.6f),
                     Position = new Vector2(65),
                     ClickAction = () => exitOverlay?.Show()
                 },

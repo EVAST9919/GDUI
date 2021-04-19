@@ -30,7 +30,6 @@ namespace GD.Game.Overlays
                 new TexturedGDButton("cross")
                 {
                     Position = new Vector2(20),
-                    Size = new Vector2(150),
                     ClickAction = () => IsVisible.Value = false
                 }
             }
