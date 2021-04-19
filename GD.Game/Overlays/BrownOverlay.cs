@@ -2,7 +2,6 @@
 using GD.Game.UserInterface;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
-using osu.Framework.Graphics.Sprites;
 using osuTK;
 
 namespace GD.Game.Overlays
@@ -37,7 +36,7 @@ namespace GD.Game.Overlays
             }
         };
 
-        protected abstract SpriteText CreateTitle();
+        protected abstract GDSpriteText CreateTitle();
 
         protected abstract Drawable CreateWindowContent();
     }

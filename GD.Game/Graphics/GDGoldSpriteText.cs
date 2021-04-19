@@ -1,12 +1,10 @@
-﻿using osu.Framework.Graphics.Sprites;
-
-namespace GD.Game.Graphics
+﻿namespace GD.Game.Graphics
 {
-    public class GDGoldSpriteText : SpriteText
+    public class GDGoldSpriteText : GDSpriteText
     {
         public GDGoldSpriteText(float textSize)
+            : base(textSize, Typeface.GDFontGold)
         {
-            Font = GDFont.GetFont(Typeface.GDFontGold, textSize);
         }
     }
 }

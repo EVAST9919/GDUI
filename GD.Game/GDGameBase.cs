@@ -27,8 +27,10 @@ namespace GD.Game
             dependencies.Cache(new LargeTextureStore(Host.CreateTextureLoaderStore(new NamespacedResourceStore<byte[]>(Resources, @"Textures"))));
 
             AddFont(Resources, @"Fonts/Arial");
-            AddFont(Resources, @"Fonts/bigFont-uhd");
-            AddFont(Resources, @"Fonts/goldFont-uhd");
+
+            // Allows colored atlases
+            Fonts.AddStore(new TimedExpiryGlyphStore(Resources, "Fonts/bigFont-uhd"));
+            Fonts.AddStore(new TimedExpiryGlyphStore(Resources, "Fonts/goldFont-uhd"));
 
             dependencies.CacheAs(localConfig);
 

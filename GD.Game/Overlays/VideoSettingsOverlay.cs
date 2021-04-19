@@ -4,14 +4,13 @@ using osu.Framework.Allocation;
 using osu.Framework.Configuration;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
-using osu.Framework.Graphics.Sprites;
 using osuTK;
 
 namespace GD.Game.Overlays
 {
     public class VideoSettingsOverlay : BrownOverlay
     {
-        protected override SpriteText CreateTitle() => new GDGoldSpriteText(70)
+        protected override GDSpriteText CreateTitle() => new GDGoldSpriteText(70)
         {
             Text = "Video Options"
         };
