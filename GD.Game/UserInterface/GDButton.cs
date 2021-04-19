@@ -25,15 +25,11 @@ namespace GD.Game.UserInterface
             this.finalScale = finalScale;
 
             Origin = Anchor.Centre;
-            InternalChild = new Container
+            InternalChild = scalableContainer = new Container
             {
-                RelativeSizeAxes = Axes.Both,
-                Child = scalableContainer = new Container
-                {
-                    Anchor = Anchor.Centre,
-                    Origin = Anchor.Centre,
-                    RelativeSizeAxes = Axes.Both
-                }
+                Anchor = Anchor.Centre,
+                Origin = Anchor.Centre,
+                RelativeSizeAxes = Axes.Both
             };
         }
 
