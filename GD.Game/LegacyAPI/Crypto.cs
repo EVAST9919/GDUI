@@ -10,8 +10,7 @@ namespace GD.Game.LegacyAPI
         public static string Decrypt(string input)
         {
             string xored = xor(input, 11, Encoding.UTF8);
-            string replaced = convertBase64URLToNormal(xored);
-            return gzipDecompress(replaced);
+            return gzipDecompress(xored);
         }
 
         private static string xor(string input, int key, Encoding encoding)
@@ -31,9 +30,9 @@ namespace GD.Game.LegacyAPI
             return replaced;
         }
 
-        private static string gzipDecompress(string base64Input)
+        private static string gzipDecompress(string input)
         {
-            byte[] inputBytes = Convert.FromBase64String(base64Input);
+            byte[] inputBytes = Convert.FromBase64String(convertBase64URLToNormal(input));
             string decompressed;
 
             using (var inputStream = new MemoryStream(inputBytes))
