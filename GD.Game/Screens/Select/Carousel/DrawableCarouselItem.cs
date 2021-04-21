@@ -28,6 +28,7 @@ namespace GD.Game.Screens.Select.Carousel
         private ProgressBar normalProgress;
         private ProgressBar practiceProgress;
         private CoinsContainer coinsContainer;
+        private OrbsContainer orbsContainer;
 
         private Sample playSample;
 
@@ -50,7 +51,7 @@ namespace GD.Game.Screens.Select.Carousel
                 Spacing = new Vector2(0, 45),
                 Children = new Drawable[]
                 {
-                    new GDButton(1.05f)
+                    new GDButton(1.1f)
                     {
                         RelativeSizeAxes = Axes.X,
                         Height = 320,
@@ -114,6 +115,12 @@ namespace GD.Game.Screens.Select.Carousel
                                     Anchor = Anchor.BottomRight,
                                     Origin = Anchor.BottomRight,
                                     Margin = new MarginPadding(15)
+                                },
+                                orbsContainer = new OrbsContainer
+                                {
+                                    Anchor = Anchor.BottomLeft,
+                                    Origin = Anchor.BottomLeft,
+                                    Margin = new MarginPadding { Bottom = 15, Left = 25 }
                                 }
                             }
                         }
@@ -135,6 +142,7 @@ namespace GD.Game.Screens.Select.Carousel
                 normalProgress.Progress = i.NewValue.Progress;
                 practiceProgress.Progress = i.NewValue.PracticeProgress;
                 coinsContainer.CoinsTaken = i.NewValue.CoinsTaken;
+                orbsContainer.Orbs = i.NewValue.Orbs;
             }, true);
         }
 
@@ -180,6 +188,56 @@ namespace GD.Game.Screens.Select.Carousel
                         Origin = Anchor.Centre
                     }
                 });
+            }
+        }
+
+        private class OrbsContainer : FillFlowContainer
+        {
+            private Vector2 orbs;
+
+            public Vector2 Orbs
+            {
+                get => orbs;
+                set
+                {
+                    orbs = value;
+                    updateOrbs();
+                }
+            }
+
+            private readonly GDSpriteText count;
+
+            public OrbsContainer()
+            {
+                AutoSizeAxes = Axes.Both;
+                Direction = FillDirection.Horizontal;
+                Spacing = new Vector2(5, 0);
+                Children = new Drawable[]
+                {
+                    new Container
+                    {
+                        Anchor = Anchor.Centre,
+                        Origin = Anchor.Centre,
+                        AutoSizeAxes = Axes.X,
+                        Height = 40,
+                        Child = count = new GDSpriteText(35)
+                        {
+                            Anchor = Anchor.Centre,
+                            Origin = Anchor.Centre,
+                            Y = -5
+                        },
+                    },
+                    new GDSprite("orbs", baseScale: 0.6f)
+                    {
+                        Anchor = Anchor.Centre,
+                        Origin = Anchor.Centre
+                    }
+                };
+            }
+
+            private void updateOrbs()
+            {
+                count.Text = $"{(int)orbs.Y}/{(int)orbs.X}";
             }
         }
 

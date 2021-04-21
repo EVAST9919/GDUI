@@ -2,6 +2,7 @@
 using osu.Framework.Testing;
 using osu.Framework.Graphics;
 using osuTK.Graphics;
+using osuTK;
 
 namespace GD.Tests.Visual
 {
@@ -21,7 +22,8 @@ namespace GD.Tests.Visual
                     LegacyDiff = LegacyDiff.Hard,
                     PracticeProgress = 50,
                     Progress = 69,
-                    CoinsTaken = new[] { 1, 3 }
+                    CoinsTaken = new[] { 1, 3 },
+                    Orbs = new Vector2(225, 100)
                 }}
             });
         }

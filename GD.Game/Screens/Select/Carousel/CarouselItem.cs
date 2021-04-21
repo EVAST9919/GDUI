@@ -1,4 +1,5 @@
-﻿using osuTK.Graphics;
+﻿using osuTK;
+using osuTK.Graphics;
 
 namespace GD.Game.Screens.Select.Carousel
 {
@@ -17,6 +18,8 @@ namespace GD.Game.Screens.Select.Carousel
         public int PracticeProgress { get; set; }
 
         public int[] CoinsTaken { get; set; }
+
+        public Vector2 Orbs { get; set; }
     }
 
     public enum LegacyDiff
