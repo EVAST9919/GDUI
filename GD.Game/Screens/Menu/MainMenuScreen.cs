@@ -8,6 +8,7 @@ using GD.Game.UserInterface;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
+using osu.Framework.Platform;
 using osu.Framework.Screens;
 using osuTK;
 
@@ -19,7 +20,7 @@ namespace GD.Game.Screens.Menu
         private SettingsOverlay settingsOverlay;
 
         [BackgroundDependencyLoader]
-        private void load(osu.Framework.Game game)
+        private void load(osu.Framework.Game game, GameHost host)
         {
             AddRangeInternal(new Drawable[]
             {
@@ -63,7 +64,7 @@ namespace GD.Game.Screens.Menu
                     Origin = Anchor.BottomCentre,
                     Direction = FillDirection.Horizontal,
                     AutoSizeAxes = Axes.Both,
-                    Spacing = new Vector2(20),
+                    Spacing = new Vector2(22),
                     Y = -55,
                     Children = new[]
                     {
@@ -86,10 +87,17 @@ namespace GD.Game.Screens.Menu
                         }
                     }
                 },
-                new TexturedGDButton("cross", baseScale: 0.6f)
+                new TexturedGDButton("cross", baseScale: 0.59f)
                 {
-                    Position = new Vector2(65),
+                    Position = new Vector2(63),
                     ClickAction = () => exitOverlay?.Show()
+                },
+                new TexturedGDButton("robtop", baseScale: 0.67f)
+                {
+                    Anchor = Anchor.BottomLeft,
+                    Origin = Anchor.BottomLeft,
+                    Position = new Vector2(35, -45),
+                    ClickAction = () => host.OpenUrlExternally("http://www.robtopgames.com/")
                 },
                 exitOverlay = new ExitOverlay
                 {
