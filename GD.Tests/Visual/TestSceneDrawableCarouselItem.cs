@@ -20,7 +20,8 @@ namespace GD.Tests.Visual
                     Name = "Test Item",
                     LegacyDiff = LegacyDiff.Hard,
                     PracticeProgress = 50,
-                    Progress = 69
+                    Progress = 69,
+                    CoinsTaken = new[] { 1, 3 }
                 }}
             });
         }

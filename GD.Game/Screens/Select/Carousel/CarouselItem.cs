@@ -15,6 +15,8 @@ namespace GD.Game.Screens.Select.Carousel
         public int Progress { get; set; }
 
         public int PracticeProgress { get; set; }
+
+        public int[] CoinsTaken { get; set; }
     }
 
     public enum LegacyDiff

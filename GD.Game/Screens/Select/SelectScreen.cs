@@ -59,12 +59,12 @@ namespace GD.Game.Screens.Select
                 {
                     Items = new[]
                     {
-                        new CarouselItem { Colour = Color4.Blue, Name = "Stereo Madness", StarDiff = 1, LegacyDiff = LegacyDiff.Easy, Progress = 10, PracticeProgress = 100 },
-                        new CarouselItem { Colour = Color4.Green, Name = "Back On Track", StarDiff = 2, LegacyDiff = LegacyDiff.Hard, Progress = 20, PracticeProgress = 90 },
-                        new CarouselItem { Colour = Color4.Red, Name = "3", StarDiff = 3, LegacyDiff = LegacyDiff.Harder, Progress = 30, PracticeProgress = 80 },
-                        new CarouselItem { Colour = Color4.Yellow, Name = "Cant Let Go", StarDiff = 4, LegacyDiff = LegacyDiff.Hard, Progress = 40, PracticeProgress = 70 },
-                        new CarouselItem { Colour = Color4.Pink, Name = "5", StarDiff = 5, LegacyDiff = LegacyDiff.Normal, Progress = 50, PracticeProgress = 60 },
-                        new CarouselItem { Colour = Color4.Purple, Name = "6", StarDiff = 6, LegacyDiff = LegacyDiff.Demon, Progress = 60, PracticeProgress = 50 }
+                        new CarouselItem { Colour = Color4.Blue, Name = "Stereo Madness", StarDiff = 1, LegacyDiff = LegacyDiff.Easy, Progress = 10, PracticeProgress = 100, CoinsTaken = new[] { 1, 3 } },
+                        new CarouselItem { Colour = Color4.Green, Name = "Back On Track", StarDiff = 2, LegacyDiff = LegacyDiff.Hard, Progress = 20, PracticeProgress = 90, CoinsTaken = new[] { 1, 2 } },
+                        new CarouselItem { Colour = Color4.Red, Name = "3", StarDiff = 3, LegacyDiff = LegacyDiff.Harder, Progress = 30, PracticeProgress = 80, CoinsTaken = new[] { 2, 3 } },
+                        new CarouselItem { Colour = Color4.Yellow, Name = "Cant Let Go", StarDiff = 4, LegacyDiff = LegacyDiff.Hard, Progress = 40, PracticeProgress = 70, CoinsTaken = new[] { 1 } },
+                        new CarouselItem { Colour = Color4.Pink, Name = "5", StarDiff = 5, LegacyDiff = LegacyDiff.Normal, Progress = 50, PracticeProgress = 60, CoinsTaken = new[] { 2 } },
+                        new CarouselItem { Colour = Color4.Purple, Name = "6", StarDiff = 6, LegacyDiff = LegacyDiff.Demon, Progress = 60, PracticeProgress = 50, CoinsTaken = new[] { 3 } }
                     },
                     ColourChanged = onColourChanged
                 },

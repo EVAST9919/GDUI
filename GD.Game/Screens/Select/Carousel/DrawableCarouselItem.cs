@@ -1,4 +1,6 @@
-﻿using GD.Game.Graphics;
+﻿using System;
+using System.Linq;
+using GD.Game.Graphics;
 using GD.Game.UserInterface;
 using osu.Framework.Allocation;
 using osu.Framework.Audio.Sample;
@@ -25,6 +27,7 @@ namespace GD.Game.Screens.Select.Carousel
         private DiffIcon icon;
         private ProgressBar normalProgress;
         private ProgressBar practiceProgress;
+        private CoinsContainer coinsContainer;
 
         private Sample playSample;
 
@@ -44,13 +47,13 @@ namespace GD.Game.Screens.Select.Carousel
                 RelativeSizeAxes = Axes.X,
                 AutoSizeAxes = Axes.Y,
                 Direction = FillDirection.Vertical,
-                Spacing = new Vector2(0, 55),
+                Spacing = new Vector2(0, 45),
                 Children = new Drawable[]
                 {
                     new GDButton(1.05f)
                     {
                         RelativeSizeAxes = Axes.X,
-                        Height = 310,
+                        Height = 320,
                         Anchor = Anchor.TopCentre,
                         Origin = Anchor.TopCentre,
                         ClickAction = () =>
@@ -88,7 +91,8 @@ namespace GD.Game.Screens.Select.Carousel
                                     Origin = Anchor.Centre,
                                     AutoSizeAxes = Axes.Both,
                                     Direction = FillDirection.Horizontal,
-                                    Spacing = new Vector2(40, 0),
+                                    Spacing = new Vector2(50, 0),
+                                    Y = -10,
                                     Children = new Drawable[]
                                     {
                                         new Container
@@ -104,6 +108,12 @@ namespace GD.Game.Screens.Select.Carousel
                                             Origin = Anchor.Centre
                                         }
                                     }
+                                },
+                                coinsContainer = new CoinsContainer
+                                {
+                                    Anchor = Anchor.BottomRight,
+                                    Origin = Anchor.BottomRight,
+                                    Margin = new MarginPadding(15)
                                 }
                             }
                         }
@@ -124,7 +134,53 @@ namespace GD.Game.Screens.Select.Carousel
                 icon.LegacyDiff.Value = i.NewValue.LegacyDiff;
                 normalProgress.Progress = i.NewValue.Progress;
                 practiceProgress.Progress = i.NewValue.PracticeProgress;
+                coinsContainer.CoinsTaken = i.NewValue.CoinsTaken;
             }, true);
+        }
+
+        private class CoinsContainer : FillFlowContainer
+        {
+            private int[] coinsTaken;
+
+            public int[] CoinsTaken
+            {
+                get => coinsTaken;
+                set
+                {
+                    coinsTaken = value ?? Array.Empty<int>();
+                    updateCoins();
+                }
+            }
+
+            public CoinsContainer()
+            {
+                AutoSizeAxes = Axes.Both;
+                Direction = FillDirection.Horizontal;
+                Spacing = new Vector2(10, 0);
+            }
+
+            private void updateCoins()
+            {
+                Clear();
+                AddRange(new Drawable[]
+                {
+                    new GDSprite(coinsTaken.Contains(1) ? "coin" : "coin-gray")
+                    {
+                        Anchor = Anchor.Centre,
+                        Origin = Anchor.Centre
+                    },
+                    new GDSprite(coinsTaken.Contains(2) ? "coin" : "coin-gray")
+                    {
+                        Anchor = Anchor.Centre,
+                        Origin = Anchor.Centre
+                    },
+                    new GDSprite(coinsTaken.Contains(3) ? "coin" : "coin-gray")
+                    {
+                        Anchor = Anchor.Centre,
+                        Origin = Anchor.Centre
+                    }
+                });
+            }
         }
 
         private class DiffIcon : Sprite
