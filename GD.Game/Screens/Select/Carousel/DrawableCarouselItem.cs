@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using GD.Game.Graphics;
+using GD.Game.Legacy;
 using GD.Game.UserInterface;
 using osu.Framework.Allocation;
 using osu.Framework.Audio.Sample;
@@ -20,7 +21,7 @@ namespace GD.Game.Screens.Select.Carousel
     {
         public CarouselItemState State { get; set; }
 
-        public readonly Bindable<CarouselItem> Item = new();
+        public readonly Bindable<DefaultLevel> Item = new();
 
         private GDSpriteText drawableName;
         private GDSpriteText drawableDiff;
@@ -77,14 +78,14 @@ namespace GD.Game.Screens.Select.Carousel
                                 {
                                     Anchor = Anchor.TopRight,
                                     Origin = Anchor.TopRight,
-                                    Margin = new MarginPadding { Top = 20, Right = 35 }
+                                    Margin = new MarginPadding { Top = 24, Right = 35 }
                                 },
-                                drawableDiff = new GDSpriteText(45)
+                                drawableDiff = new GDSpriteText(42)
                                 {
                                     Anchor = Anchor.TopRight,
                                     Origin = Anchor.TopRight,
                                     Colour = Color4.Yellow,
-                                    Margin = new MarginPadding { Top = 15, Right = 85 }
+                                    Margin = new MarginPadding { Top = 20, Right = 85 }
                                 },
                                 new FillFlowContainer
                                 {

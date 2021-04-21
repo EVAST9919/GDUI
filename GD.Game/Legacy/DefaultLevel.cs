@@ -1,9 +1,9 @@
 ﻿using osuTK;
 using osuTK.Graphics;
 
-namespace GD.Game.Screens.Select.Carousel
+namespace GD.Game.Legacy
 {
-    public class CarouselItem
+    public class DefaultLevel
     {
         public Color4 Colour { get; set; }
 

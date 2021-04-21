@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using GD.Game.Graphics;
+using GD.Game.Legacy;
 using GD.Game.UserInterface;
 using osu.Framework.Allocation;
 using osu.Framework.Graphics;
@@ -16,7 +17,7 @@ namespace GD.Game.Screens.Select.Carousel
     {
         public Action<Color4> ColourChanged;
 
-        public CarouselItem[] Items { get; set; }
+        public DefaultLevel[] Items { get; set; }
 
         private int selectedIndex = 0;
 
