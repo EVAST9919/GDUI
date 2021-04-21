@@ -10,7 +10,6 @@ using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Screens;
 using osuTK;
-using osuTK.Graphics;
 
 namespace GD.Game.Screens.Menu
 {
@@ -24,10 +23,7 @@ namespace GD.Game.Screens.Menu
         {
             AddRangeInternal(new Drawable[]
             {
-                new MenuBackground
-                {
-                    Colour = Color4.Red
-                },
+                new MenuBackground(),
                 new GDSprite("logo", useLarge:true)
                 {
                     Anchor = Anchor.TopCentre,

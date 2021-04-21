@@ -4,22 +4,19 @@ using osu.Framework.Graphics;
 using osuTK;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.Textures;
-using osu.Framework.Graphics.Shapes;
-using osuTK.Graphics;
+using osu.Framework.Extensions.Color4Extensions;
+using osu.Framework.Utils;
+using GD.Game.Legacy;
 
 namespace GD.Game.Screens.Menu
 {
     public class MenuBackground : CompositeDrawable
     {
-        private const float full_duration = 10000f;
-
-        private Container<BGSprite> sprites;
-
         [BackgroundDependencyLoader]
         private void load()
         {
             RelativeSizeAxes = Axes.Both;
-            InternalChild = sprites = new Container<BGSprite>
+            InternalChild = new Container<BGSprite>
             {
                 Size = new Vector2(1920, 1080),
                 Scale = new Vector2(2),
@@ -40,9 +37,32 @@ namespace GD.Game.Screens.Menu
             };
         }
 
+        private float h;
+        private float s;
+        private float v;
+
         protected override void LoadComplete()
         {
             base.LoadComplete();
+
+            var initialColour = ((LegacyColour)RNG.Next(8)).FromLegacy();
+            Colour = initialColour;
+
+            var hsv = initialColour.ToHSV();
+            h = hsv.h;
+            s = hsv.s;
+            v = hsv.v;
+        }
+
+        protected override void Update()
+        {
+            base.Update();
+
+            h += (float)Clock.ElapsedFrameTime * 0.01f;
+            if (h > 360)
+                h = 0;
+
+            Colour = Color4Extensions.FromHSV(h, s, v);
         }
 
         private class BGSprite : Sprite
