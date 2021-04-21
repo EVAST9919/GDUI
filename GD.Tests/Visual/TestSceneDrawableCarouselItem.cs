@@ -1,7 +1,6 @@
 ﻿using GD.Game.Screens.Select.Carousel;
 using osu.Framework.Testing;
 using osu.Framework.Graphics;
-using osuTK.Graphics;
 using osuTK;
 using GD.Game.Legacy;
 
@@ -18,7 +17,6 @@ namespace GD.Tests.Visual
                 Item = { Value = new DefaultLevel
                 {
                     StarDiff = 10,
-                    Colour = Color4.Red,
                     Name = "Test Item",
                     LegacyDiff = LegacyDiff.Hard,
                     PracticeProgress = 50,
