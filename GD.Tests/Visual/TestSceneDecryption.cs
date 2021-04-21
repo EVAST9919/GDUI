@@ -1,5 +1,5 @@
 ﻿using System;
-using GD.Game.LegacyAPI;
+using GD.Game.Legacy;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Testing;

@@ -3,7 +3,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Text;
 
-namespace GD.Game.LegacyAPI
+namespace GD.Game.Legacy
 {
     public static class Crypto
     {
