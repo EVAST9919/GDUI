@@ -1,4 +1,5 @@
 ﻿using GD.Game.Graphics;
+using GD.Game.Legacy;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osuTK.Graphics;
@@ -9,7 +10,7 @@ namespace GD.Game.Screens.Search
     {
         protected override BackButtonColour BackButtonColour => BackButtonColour.Green;
 
-        protected override Color4 BackgroundColour => new(2, 100, 248, 255);
+        protected override Color4 BackgroundColour => LegacyColour.BlueSky.FromLegacy();
 
         protected override Drawable CreateContent() => new Container
         {
