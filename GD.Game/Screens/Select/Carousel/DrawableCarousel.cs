@@ -15,7 +15,7 @@ namespace GD.Game.Screens.Select.Carousel
 {
     public class DrawableCarousel : CompositeDrawable
     {
-        public Action<Color4> ColourChanged;
+        public Action<LegacyColour> ColourChanged;
 
         public DefaultLevel[] Items { get; set; }
 

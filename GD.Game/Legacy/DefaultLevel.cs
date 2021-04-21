@@ -1,11 +1,10 @@
 ﻿using osuTK;
-using osuTK.Graphics;
 
 namespace GD.Game.Legacy
 {
     public class DefaultLevel
     {
-        public Color4 Colour { get; set; }
+        public LegacyColour Colour { get; set; }
 
         public string Name { get; set; }
 

@@ -74,18 +74,20 @@ namespace GD.Game.Screens.Select
 
         private bool firstChange = true;
 
-        private void onColourChanged(Color4 colour)
+        private void onColourChanged(LegacyColour colour)
         {
+            var converted = colour.FromLegacy();
+
             if (firstChange)
             {
-                Background.Colour = colour;
-                ground.Colour = colour;
+                Background.Colour = converted;
+                ground.Colour = converted;
                 firstChange = false;
             }
             else
             {
-                Background.FadeColour(colour, 500, Easing.Out);
-                ground.FadeColour(colour, 500, Easing.Out);
+                Background.FadeColour(converted, 500, Easing.Out);
+                ground.FadeColour(converted, 500, Easing.Out);
             }
         }
     }

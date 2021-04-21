@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using osuTK;
-using osuTK.Graphics;
 
 namespace GD.Game.Legacy
 {
@@ -14,7 +13,7 @@ namespace GD.Game.Legacy
                 StarDiff = 1,
                 Orbs = new Vector2(50, 0),
                 LegacyDiff = LegacyDiff.Easy,
-                Colour = Color4.Blue
+                Colour = LegacyColour.Blue
             },
             new DefaultLevel
             {
@@ -22,7 +21,7 @@ namespace GD.Game.Legacy
                 StarDiff = 2,
                 Orbs = new Vector2(75, 0),
                 LegacyDiff = LegacyDiff.Easy,
-                Colour = new Color4(248, 2, 248, 255)
+                Colour = LegacyColour.Purple
             },
             new DefaultLevel
             {
@@ -30,7 +29,7 @@ namespace GD.Game.Legacy
                 StarDiff = 3,
                 Orbs = new Vector2(100, 0),
                 LegacyDiff = LegacyDiff.Normal,
-                Colour = new Color4(248, 2, 123, 255)
+                Colour = LegacyColour.PurpleRed
             },
             new DefaultLevel
             {
@@ -38,7 +37,7 @@ namespace GD.Game.Legacy
                 StarDiff = 4,
                 Orbs = new Vector2(125, 0),
                 LegacyDiff = LegacyDiff.Normal,
-                Colour = Color4.Red
+                Colour = LegacyColour.Red
             },
             new DefaultLevel
             {
@@ -46,7 +45,7 @@ namespace GD.Game.Legacy
                 StarDiff = 5,
                 Orbs = new Vector2(150, 0),
                 LegacyDiff = LegacyDiff.Hard,
-                Colour = new Color4(250, 124, 4, 255)
+                Colour = LegacyColour.Orange
             },
             new DefaultLevel
             {
@@ -54,7 +53,7 @@ namespace GD.Game.Legacy
                 StarDiff = 6,
                 Orbs = new Vector2(175, 0),
                 LegacyDiff = LegacyDiff.Hard,
-                Colour = new Color4(252, 253, 6, 255)
+                Colour = LegacyColour.Yellow
             },
             new DefaultLevel
             {
@@ -62,7 +61,7 @@ namespace GD.Game.Legacy
                 StarDiff = 7,
                 Orbs = new Vector2(200, 0),
                 LegacyDiff = LegacyDiff.Harder,
-                Colour = new Color4(5, 251, 5, 255)
+                Colour = LegacyColour.Green
             },
             new DefaultLevel
             {
@@ -70,7 +69,7 @@ namespace GD.Game.Legacy
                 StarDiff = 8,
                 Orbs = new Vector2(225, 0),
                 LegacyDiff = LegacyDiff.Harder,
-                Colour = new Color4(5, 251, 252, 255)
+                Colour = LegacyColour.Cyan
             },
             new DefaultLevel
             {
@@ -78,7 +77,7 @@ namespace GD.Game.Legacy
                 StarDiff = 9,
                 Orbs = new Vector2(250, 0),
                 LegacyDiff = LegacyDiff.Harder,
-                Colour = new Color4(2, 124, 248, 255)
+                Colour = LegacyColour.BlueSky
             },
             new DefaultLevel
             {
@@ -86,7 +85,7 @@ namespace GD.Game.Legacy
                 StarDiff = 10,
                 Orbs = new Vector2(275, 0),
                 LegacyDiff = LegacyDiff.Insane,
-                Colour = Color4.Blue
+                Colour = LegacyColour.Blue
             },
             new DefaultLevel
             {
@@ -94,7 +93,7 @@ namespace GD.Game.Legacy
                 StarDiff = 11,
                 Orbs = new Vector2(300, 0),
                 LegacyDiff = LegacyDiff.Insane,
-                Colour = new Color4(248, 2, 248, 255)
+                Colour = LegacyColour.Purple
             },
             new DefaultLevel
             {
@@ -102,7 +101,7 @@ namespace GD.Game.Legacy
                 StarDiff = 12,
                 Orbs = new Vector2(325, 0),
                 LegacyDiff = LegacyDiff.Insane,
-                Colour = new Color4(248, 2, 123, 255)
+                Colour = LegacyColour.PurpleRed
             },
             new DefaultLevel
             {
@@ -110,7 +109,7 @@ namespace GD.Game.Legacy
                 StarDiff = 10,
                 Orbs = new Vector2(275, 0),
                 LegacyDiff = LegacyDiff.Insane,
-                Colour = Color4.Red
+                Colour = LegacyColour.Red
             },
             new DefaultLevel
             {
@@ -118,7 +117,7 @@ namespace GD.Game.Legacy
                 StarDiff = 14,
                 Orbs = new Vector2(500, 0),
                 LegacyDiff = LegacyDiff.Demon,
-                Colour = new Color4(250, 124, 4, 255)
+                Colour = LegacyColour.Orange
             },
             new DefaultLevel
             {
@@ -126,7 +125,7 @@ namespace GD.Game.Legacy
                 StarDiff = 12,
                 Orbs = new Vector2(325, 0),
                 LegacyDiff = LegacyDiff.Insane,
-                Colour = new Color4(252, 253, 6, 255)
+                Colour = LegacyColour.Yellow
             },
             new DefaultLevel
             {
@@ -134,7 +133,7 @@ namespace GD.Game.Legacy
                 StarDiff = 12,
                 Orbs = new Vector2(325, 0),
                 LegacyDiff = LegacyDiff.Insane,
-                Colour = new Color4(5, 251, 5, 255)
+                Colour = LegacyColour.Green
             },
             new DefaultLevel
             {
@@ -142,7 +141,7 @@ namespace GD.Game.Legacy
                 StarDiff = 10,
                 Orbs = new Vector2(275, 0),
                 LegacyDiff = LegacyDiff.Harder,
-                Colour = new Color4(5, 251, 252, 255)
+                Colour = LegacyColour.Cyan
             },
             new DefaultLevel
             {
@@ -150,7 +149,7 @@ namespace GD.Game.Legacy
                 StarDiff = 14,
                 Orbs = new Vector2(500, 0),
                 LegacyDiff = LegacyDiff.Demon,
-                Colour = new Color4(2, 124, 248, 255)
+                Colour = LegacyColour.BlueSky
             },
             new DefaultLevel
             {
@@ -158,7 +157,7 @@ namespace GD.Game.Legacy
                 StarDiff = 10,
                 Orbs = new Vector2(275, 0),
                 LegacyDiff = LegacyDiff.Harder,
-                Colour = Color4.Blue
+                Colour = LegacyColour.Blue
             },
             new DefaultLevel
             {
@@ -166,7 +165,7 @@ namespace GD.Game.Legacy
                 StarDiff = 15,
                 Orbs = new Vector2(500, 0),
                 LegacyDiff = LegacyDiff.Demon,
-                Colour = new Color4(248, 2, 248, 255)
+                Colour = LegacyColour.Purple
             }
         };
     }
