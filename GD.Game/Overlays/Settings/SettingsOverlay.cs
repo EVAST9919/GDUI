@@ -34,15 +34,14 @@ namespace GD.Game.Overlays.Settings
                 },
                 windowBg = new Sprite
                 {
-                    RelativeSizeAxes = Axes.Both,
-
+                    RelativeSizeAxes = Axes.Both
                 },
                 new GDSpriteText(70)
                 {
                     Text = "Settings",
                     Anchor = Anchor.TopCentre,
                     Origin = Anchor.TopCentre,
-                    Y = 85
+                    Y = 90
                 },
                 new SettingsContent
                 {
