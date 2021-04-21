@@ -12,6 +12,7 @@ using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Sprites;
 using osu.Framework.Graphics.Textures;
+using osu.Framework.Utils;
 using osuTK;
 using osuTK.Graphics;
 
@@ -85,7 +86,7 @@ namespace GD.Game.Screens.Select.Carousel
                                     Anchor = Anchor.TopRight,
                                     Origin = Anchor.TopRight,
                                     Colour = Color4.Yellow,
-                                    Margin = new MarginPadding { Top = 20, Right = 85 }
+                                    Margin = new MarginPadding { Top = 24, Right = 85 }
                                 },
                                 new FillFlowContainer
                                 {
@@ -94,7 +95,7 @@ namespace GD.Game.Screens.Select.Carousel
                                     AutoSizeAxes = Axes.Both,
                                     Direction = FillDirection.Horizontal,
                                     Spacing = new Vector2(50, 0),
-                                    Y = -10,
+                                    Y = -5,
                                     Children = new Drawable[]
                                     {
                                         new Container
@@ -137,7 +138,10 @@ namespace GD.Game.Screens.Select.Carousel
             base.LoadComplete();
             Item.BindValueChanged(i =>
             {
-                drawableName.Text = i.NewValue.Name;
+                var name = i.NewValue.Name;
+
+                drawableName.Text = name;
+                drawableName.TextSize = Interpolation.ValueAt(name.Length, 77, 55, 10, 20);
                 drawableDiff.Text = i.NewValue.StarDiff.ToString();
                 icon.LegacyDiff.Value = i.NewValue.LegacyDiff;
                 normalProgress.Progress = i.NewValue.Progress;
@@ -215,18 +219,10 @@ namespace GD.Game.Screens.Select.Carousel
                 Spacing = new Vector2(5, 0);
                 Children = new Drawable[]
                 {
-                    new Container
+                    count = new GDSpriteText(35)
                     {
                         Anchor = Anchor.Centre,
-                        Origin = Anchor.Centre,
-                        AutoSizeAxes = Axes.X,
-                        Height = 40,
-                        Child = count = new GDSpriteText(35)
-                        {
-                            Anchor = Anchor.Centre,
-                            Origin = Anchor.Centre,
-                            Y = -5
-                        },
+                        Origin = Anchor.Centre
                     },
                     new GDSprite("orbs", baseScale: 0.6f)
                     {

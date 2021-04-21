@@ -31,7 +31,7 @@ namespace GD.Game.Overlays
                     Origin = Anchor.TopCentre,
                     Y = 60
                 },
-                new TextFlowContainer(t => t.Font = GDFont.GetFont(Typeface.Arial, 55))
+                new TextFlowContainer(t => t.Font = ArialFont.GetFont(55))
                 {
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre,

@@ -1,4 +1,5 @@
-﻿using osu.Framework.Graphics.Sprites;
+﻿using System;
+using osu.Framework.Graphics.Sprites;
 
 namespace GD.Game.Graphics
 {
@@ -20,14 +21,13 @@ namespace GD.Game.Graphics
                     return "goldFont-uhd";
             }
 
-            return typeface.ToString();
+            throw new NotSupportedException($"{typeface} typeface is not supported.");
         }
     }
 
     public enum Typeface
     {
         GDFont,
-        GDFontGold,
-        Arial
+        GDFontGold
     }
 }

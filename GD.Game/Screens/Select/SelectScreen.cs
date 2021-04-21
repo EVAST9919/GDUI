@@ -33,13 +33,14 @@ namespace GD.Game.Screens.Select
                     Origin = Anchor.BottomCentre,
                     Size = new Vector2(1380, 4),
                     Y = -165,
+                    Alpha = 0.9f
                 },
                 new GDSpriteText(42)
                 {
                     Anchor = Anchor.BottomCentre,
                     Origin = Anchor.BottomCentre,
                     Text = "Download the soundtracks",
-                    Y = -100
+                    Y = -95
                 },
                 new GDSprite("select-corner")
                 {

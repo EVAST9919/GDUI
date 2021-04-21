@@ -11,20 +11,41 @@ namespace GD.Game.Graphics
             set => drawableText.Text = value;
         }
 
+        private float textSize;
+
+        public float TextSize
+        {
+            get => textSize;
+            set
+            {
+                textSize = value;
+                updateText();
+            }
+        }
+
+        private readonly Typeface typeface;
         private readonly SpriteText drawableText;
 
         public GDSpriteText(float textSize, Typeface typeface = Typeface.GDFont)
         {
+            this.typeface = typeface;
+
             AutoSizeAxes = Axes.X;
-            Height = textSize;
             AddInternal(drawableText = new SpriteText
             {
                 Anchor = Anchor.Centre,
                 Origin = Anchor.Centre,
-                Font = GDFont.GetFont(typeface, textSize),
-                Y = -textSize / 8,
                 X = -6
             });
+
+            TextSize = textSize;
+        }
+
+        private void updateText()
+        {
+            Height = textSize;
+            drawableText.Font = GDFont.GetFont(typeface, textSize);
+            drawableText.Y = -textSize / (typeface == Typeface.GDFont ? 5 : 8);
         }
     }
 }

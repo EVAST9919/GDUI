@@ -3,6 +3,7 @@ using osu.Framework.Testing;
 using osu.Framework.Graphics;
 using osuTK.Graphics;
 using osuTK;
+using GD.Game.Legacy;
 
 namespace GD.Tests.Visual
 {
@@ -14,7 +15,7 @@ namespace GD.Tests.Visual
             {
                 Anchor = Anchor.Centre,
                 Origin = Anchor.Centre,
-                Item = { Value = new CarouselItem
+                Item = { Value = new DefaultLevel
                 {
                     StarDiff = 10,
                     Colour = Color4.Red,

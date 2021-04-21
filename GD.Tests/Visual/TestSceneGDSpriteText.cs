@@ -1,34 +1,29 @@
 ﻿using GD.Game.Graphics;
 using osu.Framework.Testing;
 using osu.Framework.Graphics;
-using GD.Game.UserInterface;
-using osu.Framework.Graphics.Containers;
 
 namespace GD.Tests.Visual
 {
     public class TestSceneGDSpriteText : TestScene
     {
+        private readonly GDSpriteText text;
+
         public TestSceneGDSpriteText()
         {
-            FillFlowContainer flow;
-
-            Add(new GDScrollContainer
+            Add(text = new GDSpriteText(50, Typeface.GDFont)
             {
-                Child = flow = new FillFlowContainer
-                {
-                    RelativeSizeAxes = Axes.X,
-                    AutoSizeAxes = Axes.Y,
-                    Direction = FillDirection.Vertical
-                }
+                Anchor = Anchor.Centre,
+                Origin = Anchor.Centre,
+                Text = "Test text lol"
             });
+        }
 
-            for (int i = 1; i < 100; i++)
-            {
-                flow.Add(new GDSpriteText(i)
-                {
-                    Text = $"GDSpriteText with text size {i}"
-                });
-            }
+        protected override void LoadComplete()
+        {
+            base.LoadComplete();
+            AddStep("Change size to 10", () => text.TextSize = 10);
+            AddStep("Change size to 50", () => text.TextSize = 50);
+            AddStep("Change size to 100", () => text.TextSize = 100);
         }
     }
 }
