@@ -2,6 +2,7 @@
 using GD.Game.Legacy;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
+using osuTK;
 using osuTK.Graphics;
 
 namespace GD.Game.Screens.Search
@@ -26,6 +27,29 @@ namespace GD.Game.Screens.Search
                 {
                     Anchor = Anchor.BottomRight,
                     Origin = Anchor.BottomLeft
+                },
+                new FillFlowContainer
+                {
+                    Anchor = Anchor.Centre,
+                    Origin = Anchor.Centre,
+                    Width = 1230,
+                    AutoSizeAxes = Axes.Y,
+                    Direction = FillDirection.Vertical,
+                    Spacing = new Vector2(0, 15),
+                    Children = new Drawable[]
+                    {
+                        new GDSpriteText(40)
+                        {
+                            Anchor = Anchor.Centre,
+                            Origin = Anchor.Centre,
+                            Text = "Filters"
+                        },
+                        new DifficultyFilter
+                        {
+                            Anchor = Anchor.Centre,
+                            Origin = Anchor.Centre
+                        }
+                    }
                 }
             }
         };

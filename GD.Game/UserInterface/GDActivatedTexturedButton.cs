@@ -9,8 +9,8 @@ namespace GD.Game.UserInterface
     {
         public readonly BindableBool IsActive = new();
 
-        public GDActivatedTexturedButton(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.84f, bool useLarge = false)
-            : base(textureName, flipOrientation, baseScale, useLarge)
+        public GDActivatedTexturedButton(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.84f, bool useLarge = false, bool useTextureAspectRatio = true)
+            : base(textureName, flipOrientation, baseScale, useLarge, useTextureAspectRatio)
         {
             ClickAction = IsActive.Toggle;
         }

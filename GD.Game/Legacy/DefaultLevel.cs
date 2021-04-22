@@ -20,14 +20,4 @@ namespace GD.Game.Legacy
 
         public Vector2 Orbs { get; set; }
     }
-
-    public enum LegacyDiff
-    {
-        Easy,
-        Normal,
-        Hard,
-        Harder,
-        Insane,
-        Demon
-    }
 }
