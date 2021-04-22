@@ -14,7 +14,7 @@ namespace GD.Game.Screens.More
     {
         protected override BackButtonColour BackButtonColour => BackButtonColour.Pink;
 
-        protected override Color4 BackgroundColour => LegacyColour.BlueSky.FromLegacy();
+        protected override Color4 BackgroundColour => LegacyColour.BlueSky.ToColor4();
 
         protected override Drawable CreateContent() => new Container
         {

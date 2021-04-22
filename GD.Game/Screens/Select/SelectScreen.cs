@@ -76,7 +76,7 @@ namespace GD.Game.Screens.Select
 
         private void onColourChanged(LegacyColour colour)
         {
-            var converted = colour.FromLegacy();
+            var converted = colour.ToColor4();
 
             if (firstChange)
             {

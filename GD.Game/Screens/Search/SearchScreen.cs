@@ -11,7 +11,7 @@ namespace GD.Game.Screens.Search
     {
         protected override BackButtonColour BackButtonColour => BackButtonColour.Green;
 
-        protected override Color4 BackgroundColour => LegacyColour.BlueSky.FromLegacy();
+        protected override Color4 BackgroundColour => LegacyColour.BlueSky.ToColor4();
 
         protected override Drawable CreateContent() => new Container
         {

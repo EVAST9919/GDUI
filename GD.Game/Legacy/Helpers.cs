@@ -5,7 +5,7 @@ namespace GD.Game.Legacy
 {
     public static class Helpers
     {
-        public static Color4 FromLegacy(this LegacyColour legacyColour)
+        public static Color4 ToColor4(this LegacyColour legacyColour)
         {
             switch (legacyColour)
             {

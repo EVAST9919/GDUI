@@ -45,7 +45,7 @@ namespace GD.Game.Screens.Menu
         {
             base.LoadComplete();
 
-            var initialColour = ((LegacyColour)RNG.Next(8)).FromLegacy();
+            var initialColour = ((LegacyColour)RNG.Next(8)).ToColor4();
             Colour = initialColour;
 
             var hsv = initialColour.ToHSV();
