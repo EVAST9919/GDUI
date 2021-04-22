@@ -27,7 +27,7 @@ namespace GD.Game.Overlays
                     t.Y = 30;
                 }),
                 CreateWindowContent(),
-                new TexturedGDButton("cross")
+                new GDTexturedButton("cross")
                 {
                     Position = new Vector2(20),
                     ClickAction = () => IsVisible.Value = false

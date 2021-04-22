@@ -8,7 +8,7 @@ namespace GD.Tests.Visual
     {
         public TestSceneTexturedButton()
         {
-            Add(new TexturedGDButton("play")
+            Add(new GDTexturedButton("play")
             {
                 Anchor = Anchor.Centre,
                 ClickAction = () => { }

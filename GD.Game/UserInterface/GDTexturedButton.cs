@@ -3,9 +3,9 @@ using GD.Game.Graphics;
 
 namespace GD.Game.UserInterface
 {
-    public class TexturedGDButton : GDButton
+    public class GDTexturedButton : GDButton
     {
-        public TexturedGDButton(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.84f, bool useLarge = false)
+        public GDTexturedButton(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.84f, bool useLarge = false)
         {
             Content.RelativeSizeAxes = Axes.None;
             Content.AutoSizeAxes = Axes.Both;

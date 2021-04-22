@@ -58,7 +58,7 @@ namespace GD.Game.Overlays.Settings.Items.Controls
                     {
                         new Drawable[]
                         {
-                            new TexturedGDButton("edit-arrow")
+                            new GDTexturedButton("edit-arrow")
                             {
                                 Anchor = Anchor.Centre,
                                 ClickAction = () => changeValue(-1)
@@ -68,7 +68,7 @@ namespace GD.Game.Overlays.Settings.Items.Controls
                                 Anchor = Anchor.Centre,
                                 Origin = Anchor.Centre
                             },
-                            new TexturedGDButton("edit-arrow", FlipOrientation.Horizontal)
+                            new GDTexturedButton("edit-arrow", FlipOrientation.Horizontal)
                             {
                                 Anchor = Anchor.Centre,
                                 ClickAction = () => changeValue(1)

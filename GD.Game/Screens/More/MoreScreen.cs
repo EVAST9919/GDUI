@@ -91,7 +91,7 @@ namespace GD.Game.Screens.More
             }
         };
 
-        private class BigButton : TexturedGDButton
+        private class BigButton : GDTexturedButton
         {
             public BigButton(string textureName)
                 : base($"more-buttons/{textureName}", baseScale: 0.72f)

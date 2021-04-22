@@ -33,7 +33,7 @@ namespace GD.Game.Screens.Profile
                     Size = new Vector2(1380, 5),
                     Y = -170,
                 },
-                new TexturedGDButton("shards")
+                new GDTexturedButton("shards")
                 {
                     Position = new Vector2(100, 270)
                 },

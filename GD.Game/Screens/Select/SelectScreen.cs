@@ -62,7 +62,7 @@ namespace GD.Game.Screens.Select
                     Items = Dictionaries.DEFAULT_LEVELS.ToArray(),
                     ColourChanged = onColourChanged
                 },
-                new TexturedGDButton("info-icon")
+                new GDTexturedButton("info-icon")
                 {
                     Anchor = Anchor.TopRight,
                     Position = new Vector2(-70, 70)

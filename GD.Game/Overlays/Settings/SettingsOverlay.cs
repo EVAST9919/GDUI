@@ -47,7 +47,7 @@ namespace GD.Game.Overlays.Settings
                 {
                     GraphicsClicked = () => videoSettingsOverlay?.Show()
                 },
-                new TexturedGDButton("back-arrow-pink")
+                new GDTexturedButton("back-arrow-pink")
                 {
                     ClickAction = () => IsVisible.Value = false,
                     Position = new Vector2(85),

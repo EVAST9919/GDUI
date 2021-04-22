@@ -34,7 +34,7 @@ namespace GD.Game.Screens
                     Colour = ColourInfo.GradientVertical(new Color4(0, 0, 0, 0), Color4.Black.Opacity(0.5f))
                 },
                 CreateContent(),
-                new TexturedGDButton(BackButtonColour == BackButtonColour.Green ? "back-arrow" : "back-arrow-pink")
+                new GDTexturedButton(BackButtonColour == BackButtonColour.Green ? "back-arrow" : "back-arrow-pink")
                 {
                     Position = new Vector2(85, 80),
                     ClickAction = this.Exit

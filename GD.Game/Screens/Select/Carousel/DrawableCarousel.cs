@@ -36,14 +36,14 @@ namespace GD.Game.Screens.Select.Carousel
                     Origin = Anchor.Centre,
                     RelativeSizeAxes = Axes.Both,
                 },
-                new TexturedGDButton("carousel-button", FlipOrientation.Horizontal)
+                new GDTexturedButton("carousel-button", FlipOrientation.Horizontal)
                 {
                     Anchor = Anchor.CentreLeft,
                     X = 85,
                     Y = 10,
                     ClickAction = () => selectPrev()
                 },
-                new TexturedGDButton("carousel-button")
+                new GDTexturedButton("carousel-button")
                 {
                     Anchor = Anchor.CentreRight,
                     X = -85,

@@ -41,17 +41,17 @@ namespace GD.Game.Screens.Menu
                     Spacing = new Vector2(80),
                     Children = new Drawable[]
                     {
-                        new TexturedGDButton("customize")
+                        new GDTexturedButton("customize")
                         {
                             Anchor = Anchor.Centre,
                             ClickAction = () => this.Push(new ProfileScreen())
                         },
-                        new TexturedGDButton("play")
+                        new GDTexturedButton("play")
                         {
                             Anchor = Anchor.Centre,
                             ClickAction = () => this.Push(new SelectScreen())
                         },
-                        new TexturedGDButton("more")
+                        new GDTexturedButton("more")
                         {
                             Anchor = Anchor.Centre,
                             ClickAction = () => this.Push(new MoreScreen())
@@ -68,31 +68,31 @@ namespace GD.Game.Screens.Menu
                     Y = -55,
                     Children = new[]
                     {
-                        new TexturedGDButton("leaderboard")
+                        new GDTexturedButton("leaderboard")
                         {
                             Anchor = Anchor.Centre
                         },
-                        new TexturedGDButton("settings")
+                        new GDTexturedButton("settings")
                         {
                             Anchor = Anchor.Centre,
                             ClickAction = () => settingsOverlay?.Show()
                         },
-                        new TexturedGDButton("statistics")
+                        new GDTexturedButton("statistics")
                         {
                             Anchor = Anchor.Centre
                         },
-                        new TexturedGDButton("new-grounds")
+                        new GDTexturedButton("new-grounds")
                         {
                             Anchor = Anchor.Centre
                         }
                     }
                 },
-                new TexturedGDButton("cross", baseScale: 0.59f)
+                new GDTexturedButton("cross", baseScale: 0.59f)
                 {
                     Position = new Vector2(63),
                     ClickAction = () => exitOverlay?.Show()
                 },
-                new TexturedGDButton("robtop", baseScale: 0.67f)
+                new GDTexturedButton("robtop", baseScale: 0.67f)
                 {
                     Anchor = Anchor.BottomLeft,
                     Origin = Anchor.BottomLeft,
