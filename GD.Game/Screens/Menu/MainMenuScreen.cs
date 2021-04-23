@@ -27,9 +27,9 @@ namespace GD.Game.Screens.Menu
                 new MenuBackground(),
                 new GDSprite("logo", useLarge:true)
                 {
-                    Anchor = Anchor.TopCentre,
-                    Origin = Anchor.TopCentre,
-                    Y = 90
+                    Anchor = Anchor.Centre,
+                    Origin = Anchor.BottomCentre,
+                    Y = -285
                 },
                 new FillFlowContainer
                 {
