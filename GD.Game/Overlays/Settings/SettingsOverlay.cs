@@ -21,31 +21,40 @@ namespace GD.Game.Overlays.Settings
             Anchor = Anchor.TopCentre,
             Origin = Anchor.TopCentre,
             RelativePositionAxes = Axes.Y,
+            RelativeSizeAxes = Axes.Both,
             Y = -1,
-            Size = new Vector2(1920, 1080),
             Children = new Drawable[]
             {
-                new Box
+                new Container
                 {
-                    Anchor = Anchor.Centre,
-                    Origin = Anchor.Centre,
-                    Size = new Vector2(1250, 800),
-                    Colour = Color4.Black.Opacity(0.7f)
-                },
-                windowBg = new Sprite
-                {
-                    RelativeSizeAxes = Axes.Both
-                },
-                new GDSpriteText(70)
-                {
-                    Text = "Settings",
                     Anchor = Anchor.TopCentre,
                     Origin = Anchor.TopCentre,
-                    Y = 90
-                },
-                new SettingsContent
-                {
-                    GraphicsClicked = () => videoSettingsOverlay?.Show()
+                    Size = new Vector2(1920, 1080),
+                    Children = new Drawable[]
+                    {
+                        new Box
+                        {
+                            Anchor = Anchor.Centre,
+                            Origin = Anchor.Centre,
+                            Size = new Vector2(1250, 800),
+                            Colour = Color4.Black.Opacity(0.7f)
+                        },
+                        windowBg = new Sprite
+                        {
+                            RelativeSizeAxes = Axes.Both
+                        },
+                        new GDSpriteText(70)
+                        {
+                            Text = "Settings",
+                            Anchor = Anchor.TopCentre,
+                            Origin = Anchor.TopCentre,
+                            Y = 90
+                        },
+                        new SettingsContent
+                        {
+                            GraphicsClicked = () => videoSettingsOverlay?.Show()
+                        }
+                    }
                 },
                 new GDTexturedButton("back-arrow-pink")
                 {
