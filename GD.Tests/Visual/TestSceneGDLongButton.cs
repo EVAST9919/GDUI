@@ -37,7 +37,7 @@ namespace GD.Tests.Visual
                         Origin = Anchor.Centre,
                         ClickAction = () => { }
                     },
-                    new GDLongButton(LongButtonType.Long, "Long")
+                    new GDLongButton(LongButtonType.Long, "Long", "star")
                     {
                         Anchor = Anchor.Centre,
                         Origin = Anchor.Centre,

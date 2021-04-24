@@ -75,7 +75,7 @@ namespace GD.Game.Screens.Select.Carousel
                                     RelativeSizeAxes = Axes.Both,
                                     Colour = Color4.Black.Opacity(0.5f)
                                 },
-                                new GDSprite("star-small", FlipOrientation.None, baseScale: 0.6f)
+                                new GDSprite("star-small", baseScale: 0.6f)
                                 {
                                     Anchor = Anchor.TopRight,
                                     Origin = Anchor.TopRight,
