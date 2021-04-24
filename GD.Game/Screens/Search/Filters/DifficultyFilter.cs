@@ -25,7 +25,7 @@ namespace GD.Game.Screens.Search.Filters
                 Origin = Anchor.Centre,
                 AutoSizeAxes = Axes.Both,
                 Direction = FillDirection.Horizontal,
-                Spacing = new Vector2(60, 0),
+                Spacing = new Vector2(65, 0),
                 Children = ((CustomDiff[])Enum.GetValues(typeof(CustomDiff))).Select(d => new DiffButton(d)).ToList()
             };
         }

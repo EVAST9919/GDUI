@@ -21,7 +21,7 @@ namespace GD.Game.Screens.Search.Filters
                 {
                     RelativeSizeAxes = Axes.Both,
                     Masking = true,
-                    CornerRadius = 20,
+                    CornerRadius = 33,
                     Child = new Box
                     {
                         RelativeSizeAxes = Axes.Both,

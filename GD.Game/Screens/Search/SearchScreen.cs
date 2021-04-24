@@ -45,7 +45,7 @@ namespace GD.Game.Screens.Search
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre
                         },
-                        new GDSpriteText(40)
+                        new GDSpriteText(42)
                         {
                             Anchor = Anchor.Centre,
                             Origin = Anchor.Centre,
