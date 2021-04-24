@@ -24,138 +24,54 @@ namespace GD.Game.Overlays.Settings
             {
                 new Container
                 {
-                    RelativeSizeAxes = Axes.Both,
-                    Padding = new MarginPadding { Horizontal = 10 },
-                    Child = new FillFlowContainer
+                    RelativeSizeAxes = Axes.X,
+                    Height = 400,
+                    Padding = new MarginPadding { Horizontal = 40, Top = 30 },
+                    Children = new Drawable[]
                     {
-                        RelativeSizeAxes = Axes.X,
-                        AutoSizeAxes = Axes.Y,
-                        Children = new Drawable[]
+                        new GDColoredButton("Account", ButtonColour.Green)
                         {
-                            new GridContainer
-                            {
-                                RelativeSizeAxes = Axes.X,
-                                AutoSizeAxes = Axes.Y,
-                                RowDimensions = new[]
-                                {
-                                    new Dimension(GridSizeMode.AutoSize),
-                                    new Dimension(GridSizeMode.AutoSize)
-                                },
-                                ColumnDimensions = new[]
-                                {
-                                    new Dimension(GridSizeMode.Relative, size: 0.5f),
-                                    new Dimension()
-                                },
-                                Content = new[]
-                                {
-                                    new Drawable[]
-                                    {
-                                        new Container
-                                        {
-                                            RelativeSizeAxes = Axes.X,
-                                            AutoSizeAxes = Axes.Y,
-                                            Padding = new MarginPadding(20),
-                                            Child = new GDColoredButton("Account", ButtonColour.Green)
-                                            {
-                                                RelativeSizeAxes = Axes.X,
-                                                Anchor = Anchor.Centre
-                                            }
-                                        },
-                                        new Container
-                                        {
-                                            RelativeSizeAxes = Axes.X,
-                                            AutoSizeAxes = Axes.Y,
-                                            Padding = new MarginPadding(20),
-                                            Child = new GDColoredButton("How to play", ButtonColour.Green, 70)
-                                            {
-                                                RelativeSizeAxes = Axes.X,
-                                                Anchor = Anchor.Centre
-                                            }
-                                        }
-                                    },
-                                    new Drawable[]
-                                    {
-                                        new Container
-                                        {
-                                            RelativeSizeAxes = Axes.X,
-                                            AutoSizeAxes = Axes.Y,
-                                            Padding = new MarginPadding(20),
-                                            Child = new GDColoredButton("Options", ButtonColour.Green)
-                                            {
-                                                RelativeSizeAxes = Axes.X,
-                                                Anchor = Anchor.Centre
-                                            }
-                                        },
-                                        new Container
-                                        {
-                                            RelativeSizeAxes = Axes.X,
-                                            AutoSizeAxes = Axes.Y,
-                                            Padding = new MarginPadding(20),
-                                            Child = new GDColoredButton("Graphics", ButtonColour.Green)
-                                            {
-                                                RelativeSizeAxes = Axes.X,
-                                                Anchor = Anchor.Centre,
-                                                ClickAction = () => GraphicsClicked?.Invoke()
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            new GridContainer
-                            {
-                                RelativeSizeAxes = Axes.X,
-                                AutoSizeAxes = Axes.Y,
-                                RowDimensions = new[]
-                                {
-                                    new Dimension(GridSizeMode.AutoSize)
-                                },
-                                ColumnDimensions = new[]
-                                {
-                                    new Dimension(GridSizeMode.Relative, size: 1f/3),
-                                    new Dimension(GridSizeMode.Relative, size: 1f/3),
-                                    new Dimension()
-                                },
-                                Content = new[]
-                                {
-                                    new Drawable[]
-                                    {
-                                        new Container
-                                        {
-                                            RelativeSizeAxes = Axes.X,
-                                            AutoSizeAxes = Axes.Y,
-                                            Padding = new MarginPadding(20),
-                                            Child = new GDColoredButton("Rate", ButtonColour.Green)
-                                            {
-                                                RelativeSizeAxes = Axes.X,
-                                                Anchor = Anchor.Centre
-                                            }
-                                        },
-                                        new Container
-                                        {
-                                            RelativeSizeAxes = Axes.X,
-                                            AutoSizeAxes = Axes.Y,
-                                            Padding = new MarginPadding(20),
-                                            Child = new GDColoredButton("Songs", ButtonColour.Green)
-                                            {
-                                                RelativeSizeAxes = Axes.X,
-                                                Anchor = Anchor.Centre
-                                            }
-                                        },
-                                        new Container
-                                        {
-                                            RelativeSizeAxes = Axes.X,
-                                            AutoSizeAxes = Axes.Y,
-                                            Padding = new MarginPadding(20),
-                                            Child = new GDColoredButton("Help", ButtonColour.Green)
-                                            {
-                                                RelativeSizeAxes = Axes.X,
-                                                Anchor = Anchor.Centre
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                            Anchor = Anchor.TopLeft,
+                            Origin = Anchor.TopLeft,
+                            Width = 490
+                        },
+                        new GDColoredButton("How to play", ButtonColour.Green, 66)
+                        {
+                            Anchor = Anchor.TopRight,
+                            Origin = Anchor.TopRight,
+                            Width = 490
+                        },
+                        new GDColoredButton("Options", ButtonColour.Green)
+                        {
+                            Anchor = Anchor.CentreLeft,
+                            Origin = Anchor.CentreLeft,
+                            Width = 490
+                        },
+                        new GDColoredButton("Graphics", ButtonColour.Green)
+                        {
+                            Anchor = Anchor.CentreRight,
+                            Origin = Anchor.CentreRight,
+                            Width = 490,
+                            ClickAction = () => GraphicsClicked?.Invoke()
+                        },
+                        new GDColoredButton("Rate", ButtonColour.Green)
+                        {
+                            Anchor = Anchor.BottomLeft,
+                            Origin = Anchor.BottomLeft,
+                            Width = 315
+                        },
+                        new GDColoredButton("Songs", ButtonColour.Green)
+                        {
+                            Anchor = Anchor.BottomCentre,
+                            Origin = Anchor.BottomCentre,
+                            Width = 315
+                        },
+                        new GDColoredButton("Help", ButtonColour.Green)
+                        {
+                            Anchor = Anchor.BottomRight,
+                            Origin = Anchor.BottomRight,
+                            Width = 315
+                        },
                     }
                 },
                 new Container
@@ -164,7 +80,7 @@ namespace GD.Game.Overlays.Settings
                     Origin = Anchor.BottomCentre,
                     RelativeSizeAxes = Axes.X,
                     AutoSizeAxes = Axes.Y,
-                    Y = -13,
+                    Y = -10,
                     Padding = new MarginPadding { Horizontal = 200 },
                     Child = new FillFlowContainer
                     {

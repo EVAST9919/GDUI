@@ -43,12 +43,12 @@ namespace GD.Game.Overlays.Settings
                         {
                             RelativeSizeAxes = Axes.Both
                         },
-                        new GDSpriteText(70)
+                        new GDSpriteText(68)
                         {
                             Text = "Settings",
                             Anchor = Anchor.TopCentre,
                             Origin = Anchor.TopCentre,
-                            Y = 90
+                            Y = 93
                         },
                         new SettingsContent
                         {
