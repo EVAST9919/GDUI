@@ -3,17 +3,11 @@ using GD.Game.Graphics;
 
 namespace GD.Game.UserInterface
 {
-    public class GDTexturedButton : GDButton
+    public class GDTexturedButton : GDAutosizedButton
     {
-        private readonly bool autosized;
-
         public GDTexturedButton(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.84f, bool useLarge = false, bool autosized = true)
+            : base(autosized)
         {
-            this.autosized = autosized;
-
-            Content.RelativeSizeAxes = Axes.None;
-            Content.AutoSizeAxes = Axes.Both;
-
             var s = new GDSprite(textureName, flipOrientation, baseScale, useLarge);
 
             switch (flipOrientation)
@@ -28,14 +22,6 @@ namespace GD.Game.UserInterface
             }
 
             Add(s);
-        }
-
-        protected override void LoadComplete()
-        {
-            base.LoadComplete();
-
-            if (autosized)
-                Size = Content.Size;
         }
     }
 }
