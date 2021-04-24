@@ -5,11 +5,11 @@ namespace GD.Game.UserInterface
 {
     public class GDTexturedButton : GDButton
     {
-        private readonly bool useTextureAspectRatio;
+        private readonly bool autosized;
 
-        public GDTexturedButton(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.84f, bool useLarge = false, bool useTextureAspectRatio = true)
+        public GDTexturedButton(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.84f, bool useLarge = false, bool autosized = true)
         {
-            this.useTextureAspectRatio = useTextureAspectRatio;
+            this.autosized = autosized;
 
             Content.RelativeSizeAxes = Axes.None;
             Content.AutoSizeAxes = Axes.Both;
@@ -27,14 +27,14 @@ namespace GD.Game.UserInterface
                     break;
             }
 
-            Child = s;
+            Add(s);
         }
 
         protected override void LoadComplete()
         {
             base.LoadComplete();
 
-            if (useTextureAspectRatio)
+            if (autosized)
                 Size = Content.Size;
         }
     }

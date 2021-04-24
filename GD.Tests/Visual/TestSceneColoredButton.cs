@@ -5,9 +5,9 @@ using osuTK;
 
 namespace GD.Tests.Visual
 {
-    public class TestSceneGreenButton : TestScene
+    public class TestSceneColoredButton : TestScene
     {
-        public TestSceneGreenButton()
+        public TestSceneColoredButton()
         {
             Add(new GDColoredButton("test", ButtonColour.Green)
             {
