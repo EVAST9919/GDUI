@@ -19,7 +19,7 @@ namespace GD.Game.Overlays
             Size = new Vector2(1000, 480),
             Children = new Drawable[]
             {
-                new GDSprite("overlay", baseScale: 1f)
+                new GDSprite("overlay", baseScale: 1f, useLarge: true)
                 {
                     Anchor = Anchor.Centre,
                     Origin = Anchor.Centre
