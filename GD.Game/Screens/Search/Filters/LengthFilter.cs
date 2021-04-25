@@ -19,14 +19,24 @@ namespace GD.Game.Screens.Search.Filters
                 Origin = Anchor.Centre,
                 AutoSizeAxes = Axes.Both,
                 Direction = FillDirection.Horizontal,
-                Spacing = new Vector2(48, 0),
+                Spacing = new Vector2(46, 0),
                 Children = new Drawable[]
                 {
+                    new GDSprite("time-icon")
+                    {
+                        Anchor = Anchor.Centre,
+                        Origin = Anchor.Centre
+                    },
                     new LocalTextButton("Tiny"),
                     new LocalTextButton("Short"),
                     new LocalTextButton("Medium"),
                     new LocalTextButton("Long"),
-                    new LocalTextButton("XL")
+                    new LocalTextButton("XL"),
+                    new GDActivatedTexturedButton("star-small")
+                    {
+                        Anchor = Anchor.Centre,
+                        Origin = Anchor.Centre
+                    }
                 }
             });
         }

@@ -22,7 +22,7 @@ namespace GD.Game.Screens.Search.Filters
                         Anchor = Anchor.TopLeft,
                         Origin = Anchor.TopLeft
                     },
-                    new GDLongButton(LongButtonType.Long, "Most Liked", "like", 45)
+                    new GDLongButton(LongButtonType.Long, "Most Liked", "like", 50)
                     {
                         Anchor = Anchor.TopRight,
                         Origin = Anchor.TopRight
