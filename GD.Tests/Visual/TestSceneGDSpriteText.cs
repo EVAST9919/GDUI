@@ -14,7 +14,7 @@ namespace GD.Tests.Visual
             {
                 Anchor = Anchor.Centre,
                 Origin = Anchor.Centre,
-                Text = "Test text lol"
+                Text = "Test text lol `}|"
             });
         }
 
