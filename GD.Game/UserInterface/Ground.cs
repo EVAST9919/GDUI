@@ -25,14 +25,14 @@ namespace GD.Game.UserInterface
         private readonly GDBackgrop sprites;
         private readonly bool playing;
 
-        public Ground(bool playing)
+        public Ground(int index, bool playing)
         {
             this.playing = playing;
 
             RelativeSizeAxes = Axes.Both;
             InternalChildren = new Drawable[]
             {
-                sprites = new GDBackgrop(() => new GroundSprite(), 512),
+                sprites = new GDBackgrop(() => new GroundSprite(index), 512),
                 new GridContainer
                 {
                     RelativeSizeAxes = Axes.X,
@@ -89,6 +89,13 @@ namespace GD.Game.UserInterface
 
         private class GroundSprite : Sprite
         {
+            private readonly int index;
+
+            public GroundSprite(int index)
+            {
+                this.index = index;
+            }
+
             [BackgroundDependencyLoader]
             private void load(TextureStore textures)
             {
@@ -96,7 +103,7 @@ namespace GD.Game.UserInterface
                 Origin = Anchor.BottomLeft;
                 Y = 512 - 304;
                 Size = new Vector2(512);
-                Texture = textures.Get("ground-1", WrapMode.ClampToBorder, WrapMode.ClampToBorder);
+                Texture = textures.Get($"grounds/{index}", WrapMode.ClampToBorder, WrapMode.ClampToBorder);
             }
         }
     }

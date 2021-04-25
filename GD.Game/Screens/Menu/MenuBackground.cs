@@ -23,8 +23,8 @@ namespace GD.Game.Screens.Menu
             RelativeSizeAxes = Axes.Both;
             InternalChildren = new Drawable[]
             {
-                bg = new GDBackgrop(() => new BGSprite(), 20480),
-                ground = new Ground(true)
+                bg = new GDBackgrop(() => new BGSprite(RNG.Next(20)), 20480),
+                ground = new Ground(RNG.Next(7), true)
             };
         }
 
@@ -59,13 +59,20 @@ namespace GD.Game.Screens.Menu
 
         private class BGSprite : Sprite
         {
+            private readonly int index;
+
+            public BGSprite(int index)
+            {
+                this.index = index;
+            }
+
             [BackgroundDependencyLoader]
             private void load(LargeTextureStore textures)
             {
                 Anchor = Anchor.BottomLeft;
                 Origin = Anchor.BottomLeft;
                 Size = new Vector2(2160);
-                Texture = textures.Get("bg-1", WrapMode.ClampToBorder, WrapMode.ClampToBorder);
+                Texture = textures.Get($"backgrounds/{index}", WrapMode.ClampToBorder, WrapMode.ClampToBorder);
             }
         }
     }

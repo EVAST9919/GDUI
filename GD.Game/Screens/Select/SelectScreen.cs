@@ -24,7 +24,7 @@ namespace GD.Game.Screens.Select
             RelativeSizeAxes = Axes.Both,
             Children = new Drawable[]
             {
-                ground = new Ground(false)
+                ground = new Ground(0, false)
                 {
                     Y = 135
                 },
