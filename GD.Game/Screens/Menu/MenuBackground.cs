@@ -7,33 +7,24 @@ using osu.Framework.Graphics.Textures;
 using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Utils;
 using GD.Game.Legacy;
+using GD.Game.UserInterface;
+using osu.Framework.Graphics.OpenGL.Textures;
 
 namespace GD.Game.Screens.Menu
 {
     public class MenuBackground : CompositeDrawable
     {
+        private GDBackgrop bg;
+        private Ground ground;
+
         [BackgroundDependencyLoader]
         private void load()
         {
             RelativeSizeAxes = Axes.Both;
-            InternalChild = new Container<BGSprite>
+            InternalChildren = new Drawable[]
             {
-                Size = new Vector2(1920, 1080),
-                Scale = new Vector2(2),
-                Anchor = Anchor.BottomCentre,
-                Origin = Anchor.BottomCentre,
-                Children = new[]
-                {
-                    new BGSprite(),
-                    new BGSprite
-                    {
-                        X = 1080
-                    },
-                    new BGSprite
-                    {
-                        X = 2160
-                    }
-                }
+                bg = new GDBackgrop(() => new BGSprite(), 20480),
+                ground = new Ground(true)
             };
         }
 
@@ -44,9 +35,10 @@ namespace GD.Game.Screens.Menu
         protected override void LoadComplete()
         {
             base.LoadComplete();
+            bg.Start();
 
             var initialColour = ((LegacyColour)RNG.Next(8)).ToColor4();
-            Colour = initialColour;
+            bg.Colour = ground.SpriteColour = initialColour;
 
             var hsv = initialColour.ToHSV();
             h = hsv.h;
@@ -62,7 +54,7 @@ namespace GD.Game.Screens.Menu
             if (h > 360)
                 h = 0;
 
-            Colour = Color4Extensions.FromHSV(h, s, v);
+            bg.Colour = ground.SpriteColour = Color4Extensions.FromHSV(h, s, v);
         }
 
         private class BGSprite : Sprite
@@ -70,8 +62,10 @@ namespace GD.Game.Screens.Menu
             [BackgroundDependencyLoader]
             private void load(LargeTextureStore textures)
             {
-                Size = new Vector2(1080);
-                Texture = textures.Get("bg-1");
+                Anchor = Anchor.BottomLeft;
+                Origin = Anchor.BottomLeft;
+                Size = new Vector2(2160);
+                Texture = textures.Get("bg-1", WrapMode.ClampToBorder, WrapMode.ClampToBorder);
             }
         }
     }

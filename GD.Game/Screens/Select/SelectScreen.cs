@@ -1,7 +1,9 @@
 ﻿using GD.Game.Graphics;
 using GD.Game.Legacy;
 using GD.Game.Screens.Select.Carousel;
+using GD.Game.TransformableExtensions;
 using GD.Game.UserInterface;
+using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osuTK;
@@ -15,25 +17,16 @@ namespace GD.Game.Screens.Select
 
         protected override Color4 BackgroundColour => Color4.White;
 
+        private Ground ground;
+
         protected override Drawable CreateContent() => new Container
         {
             RelativeSizeAxes = Axes.Both,
             Children = new Drawable[]
             {
-                ground = new GDSprite("select-ground", baseScale: 1f, useLarge: true)
+                ground = new Ground(false)
                 {
-                    Anchor = Anchor.BottomCentre,
-                    Origin = Anchor.Centre,
-                    Y = 30,
-                    Alpha = 0.5f
-                },
-                new GroundLine
-                {
-                    Anchor = Anchor.BottomCentre,
-                    Origin = Anchor.BottomCentre,
-                    Size = new Vector2(1380, 4),
-                    Y = -165,
-                    Alpha = 0.9f
+                    Y = 135
                 },
                 new GDSpriteText(42)
                 {
@@ -70,8 +63,6 @@ namespace GD.Game.Screens.Select
             }
         };
 
-        private GDSprite ground;
-
         private bool firstChange = true;
 
         private void onColourChanged(LegacyColour colour)
@@ -81,13 +72,13 @@ namespace GD.Game.Screens.Select
             if (firstChange)
             {
                 Background.Colour = converted;
-                ground.Colour = converted;
+                ground.SpriteColour = converted.Darken(0.2f);
                 firstChange = false;
             }
             else
             {
                 Background.FadeColour(converted, 500, Easing.Out);
-                ground.FadeColour(converted, 500, Easing.Out);
+                ground.FadeSpeiteColour(converted.Darken(0.2f), 500, Easing.Out);
             }
         }
     }

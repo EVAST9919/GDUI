@@ -11,15 +11,16 @@ namespace GD.Game.UserInterface
     {
         public GroundLine()
         {
+            Alpha = 0.9f;
             RowDimensions = new[]
             {
                 new Dimension()
             };
             ColumnDimensions = new[]
             {
-                new Dimension(GridSizeMode.Relative, size: 0.14f),
+                new Dimension(GridSizeMode.Relative, size: 0.3f),
                 new Dimension(),
-                new Dimension(GridSizeMode.Relative, size: 0.14f)
+                new Dimension(GridSizeMode.Relative, size: 0.3f)
             };
             Content = new[]
             {
