@@ -20,11 +20,14 @@ namespace GD.Game.Screens.Menu
         [BackgroundDependencyLoader]
         private void load()
         {
+            var bgIndex = RNG.Next(20);
+            var groundIndex = RNG.Next(7);
+
             RelativeSizeAxes = Axes.Both;
             InternalChildren = new Drawable[]
             {
-                bg = new GDBackgrop(() => new BGSprite(RNG.Next(20)), 20480),
-                ground = new Ground(RNG.Next(7), true)
+                bg = new GDBackgrop(() => new BGSprite(bgIndex), 25000),
+                ground = new Ground(RNG.Next(groundIndex), true)
             };
         }
 
