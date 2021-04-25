@@ -25,7 +25,7 @@ namespace GD.Game.Screens.Search.Filters
                     Child = new Box
                     {
                         RelativeSizeAxes = Axes.Both,
-                        Colour = Color4.Black.Opacity(0.5f)
+                        Colour = Color4.Black.Opacity(0.4f)
                     }
                 },
                 content = new Container
