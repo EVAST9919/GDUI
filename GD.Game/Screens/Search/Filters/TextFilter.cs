@@ -93,7 +93,7 @@ namespace GD.Game.Screens.Search.Filters
                 BackgroundFocused = Color4.Black.Opacity(0.4f);
             }
 
-            protected override SpriteText CreatePlaceholder() => new SpriteText
+            protected override SpriteText CreatePlaceholder() => new()
             {
                 Font = GDFont.GetFont(),
                 Colour = new Color4(109, 153, 213, 255),
