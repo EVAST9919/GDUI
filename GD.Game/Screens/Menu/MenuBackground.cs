@@ -6,25 +6,29 @@ using osu.Framework.Utils;
 using GD.Game.Legacy;
 using GD.Game.UserInterface;
 using GD.Game.Graphics;
+using System.Collections.Generic;
 
 namespace GD.Game.Screens.Menu
 {
     public class MenuBackground : CompositeDrawable
     {
+        private static readonly List<int> allowed_bgs = new() { 0, 6, 11, 19 };
+        private static readonly List<int> allowed_grounds = new() { 0, 5 };
+
         private GDBackgrop bg;
         private Ground ground;
 
         [BackgroundDependencyLoader]
         private void load()
         {
-            var bgIndex = RNG.Next(20);
-            var groundIndex = RNG.Next(7);
+            var bgIndex = allowed_bgs[RNG.Next(allowed_bgs.Count)];
+            var groundIndex = allowed_grounds[RNG.Next(allowed_grounds.Count)];
 
             RelativeSizeAxes = Axes.Both;
             InternalChildren = new Drawable[]
             {
                 bg = new GDBackgrop(() => new BGSprite(bgIndex), 25000),
-                ground = new Ground(RNG.Next(groundIndex), true)
+                ground = new Ground(groundIndex, true)
             };
         }
 
