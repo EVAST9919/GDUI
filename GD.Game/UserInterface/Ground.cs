@@ -1,14 +1,10 @@
 ﻿using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics;
-using osu.Framework.Graphics.Sprites;
-using osu.Framework.Allocation;
-using osu.Framework.Graphics.Textures;
-using osuTK;
 using osu.Framework.Graphics.Shapes;
 using osu.Framework.Graphics.Colour;
 using osuTK.Graphics;
 using osu.Framework.Extensions.Color4Extensions;
-using osu.Framework.Graphics.OpenGL.Textures;
+using GD.Game.Graphics;
 
 namespace GD.Game.UserInterface
 {
@@ -32,7 +28,7 @@ namespace GD.Game.UserInterface
             RelativeSizeAxes = Axes.Both;
             InternalChildren = new Drawable[]
             {
-                sprites = new GDBackgrop(() => new GroundSprite(index), 512),
+                sprites = new GDBackgrop(() => new GroundSprite(index), 400),
                 new GridContainer
                 {
                     RelativeSizeAxes = Axes.X,
@@ -87,23 +83,14 @@ namespace GD.Game.UserInterface
                 sprites.Start();
         }
 
-        private class GroundSprite : Sprite
+        private class GroundSprite : GDSprite
         {
-            private readonly int index;
-
             public GroundSprite(int index)
-            {
-                this.index = index;
-            }
-
-            [BackgroundDependencyLoader]
-            private void load(TextureStore textures)
+                : base($"grounds/{index}")
             {
                 Anchor = Anchor.BottomLeft;
                 Origin = Anchor.BottomLeft;
-                Y = 512 - 304;
-                Size = new Vector2(512);
-                Texture = textures.Get($"grounds/{index}", WrapMode.ClampToBorder, WrapMode.ClampToBorder);
+                Y = 126;
             }
         }
     }

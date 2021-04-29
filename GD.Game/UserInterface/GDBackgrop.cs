@@ -42,7 +42,6 @@ namespace GD.Game.UserInterface
         private void load()
         {
             RelativeSizeAxes = Axes.Both;
-            Size = new Vector2(1.0f);
 
             // Add an initial sprite from which we can get the aspect ratio
             AddInternal(createSprite());
@@ -90,7 +89,7 @@ namespace GD.Game.UserInterface
             Sprite sprite = (Sprite)InternalChildren[0];
 
             // Work out how many copies are needed to horizontally fill the screen
-            var spriteNum = (int)Math.Ceiling(DrawWidth / sprite.DrawWidth) + 1;
+            var spriteNum = (int)Math.Ceiling(DrawWidth / (sprite.DrawWidth * sprite.Scale.X)) + 1;
 
             // If the number needed is higher or lower than the current number of child sprites, add/remove the amount needed for them to match
             if (spriteNum != InternalChildren.Count)

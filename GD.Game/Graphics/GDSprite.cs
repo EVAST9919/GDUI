@@ -9,22 +9,11 @@ namespace GD.Game.Graphics
     {
         private readonly string textureName;
         private readonly bool useLarge;
-        private readonly FlipOrientation flipOrientation;
-        private readonly float baseScale;
 
         public GDSprite(string textureName, FlipOrientation flipOrientation = FlipOrientation.None, float baseScale = 0.84f, bool useLarge = false)
         {
             this.textureName = textureName;
-            this.flipOrientation = flipOrientation;
-            this.baseScale = baseScale;
             this.useLarge = useLarge;
-        }
-
-        [BackgroundDependencyLoader]
-        private void load(TextureStore textures, LargeTextureStore largeTextures)
-        {
-            Texture = useLarge ? largeTextures.Get(textureName) : textures.Get(textureName);
-            Size = Texture.Size;
 
             var scale = new Vector2(baseScale);
 
@@ -40,6 +29,13 @@ namespace GD.Game.Graphics
             }
 
             Scale = scale;
+        }
+
+        [BackgroundDependencyLoader]
+        private void load(TextureStore textures, LargeTextureStore largeTextures)
+        {
+            Texture = useLarge ? largeTextures.Get(textureName) : textures.Get(textureName);
+            Size = Texture.Size;
         }
     }
 

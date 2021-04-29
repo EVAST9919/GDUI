@@ -1,14 +1,11 @@
 ﻿using osu.Framework.Allocation;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics;
-using osuTK;
-using osu.Framework.Graphics.Sprites;
-using osu.Framework.Graphics.Textures;
 using osu.Framework.Extensions.Color4Extensions;
 using osu.Framework.Utils;
 using GD.Game.Legacy;
 using GD.Game.UserInterface;
-using osu.Framework.Graphics.OpenGL.Textures;
+using GD.Game.Graphics;
 
 namespace GD.Game.Screens.Menu
 {
@@ -60,22 +57,13 @@ namespace GD.Game.Screens.Menu
             bg.Colour = ground.SpriteColour = Color4Extensions.FromHSV(h, s, v);
         }
 
-        private class BGSprite : Sprite
+        private class BGSprite : GDSprite
         {
-            private readonly int index;
-
             public BGSprite(int index)
-            {
-                this.index = index;
-            }
-
-            [BackgroundDependencyLoader]
-            private void load(LargeTextureStore textures)
+                : base($"backgrounds/{index}", useLarge: true)
             {
                 Anchor = Anchor.BottomLeft;
                 Origin = Anchor.BottomLeft;
-                Size = new Vector2(2160);
-                Texture = textures.Get($"backgrounds/{index}", WrapMode.ClampToBorder, WrapMode.ClampToBorder);
             }
         }
     }
