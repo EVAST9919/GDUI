@@ -7,7 +7,7 @@ using osuTK;
 
 namespace GD.Game.UserInterface
 {
-    public class GDBackgrop : CompositeDrawable
+    public partial class GDBackgrop : CompositeDrawable
     {
         private readonly Func<Sprite> createSprite;
 
@@ -96,7 +96,7 @@ namespace GD.Game.UserInterface
             {
                 // Update the number of sprites in the list to match the number we need to cover the whole container
                 while (InternalChildren.Count > spriteNum)
-                    RemoveInternal(InternalChildren[InternalChildren.Count - 1]);
+                    RemoveInternal(InternalChildren[InternalChildren.Count - 1], true);
 
                 while (InternalChildren.Count < spriteNum)
                     AddInternal(createSprite());

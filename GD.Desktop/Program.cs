@@ -8,7 +8,7 @@ namespace GD.Desktop
     {
         public static void Main()
         {
-            GameHost host = Host.GetSuitableHost(@"GD");
+            GameHost host = Host.GetSuitableDesktopHost(@"GD");
             host.Run(new GDGame());
         }
     }

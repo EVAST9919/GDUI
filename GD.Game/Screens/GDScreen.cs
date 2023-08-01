@@ -5,7 +5,7 @@ using osuTK.Input;
 
 namespace GD.Game.Screens
 {
-    public class GDScreen : Screen
+    public partial class GDScreen : Screen
     {
         public static readonly float SCREEN_CHANGE_DURATION = 600;
 
@@ -27,30 +27,30 @@ namespace GD.Game.Screens
             return base.OnKeyDown(e);
         }
 
-        public override void OnEntering(IScreen last)
+        public override void OnEntering(ScreenTransitionEvent e)
         {
-            base.OnEntering(last);
+            base.OnEntering(e);
             this.Delay(SCREEN_CHANGE_DURATION / 2f).FadeIn();
         }
 
-        public override bool OnExiting(IScreen next)
+        public override bool OnExiting(ScreenExitEvent e)
         {
-            if (base.OnExiting(next))
+            if (base.OnExiting(e))
                 return true;
 
             this.Delay(SCREEN_CHANGE_DURATION / 2f).FadeOut();
             return false;
         }
 
-        public override void OnSuspending(IScreen next)
+        public override void OnSuspending(ScreenTransitionEvent e)
         {
-            base.OnSuspending(next);
+            base.OnSuspending(e);
             this.Delay(SCREEN_CHANGE_DURATION / 2f).FadeOut();
         }
 
-        public override void OnResuming(IScreen last)
+        public override void OnResuming(ScreenTransitionEvent e)
         {
-            base.OnResuming(last);
+            base.OnResuming(e);
             this.Delay(SCREEN_CHANGE_DURATION / 2f).FadeIn();
         }
 

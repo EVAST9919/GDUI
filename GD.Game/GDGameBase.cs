@@ -6,31 +6,32 @@ using osu.Framework.Input.Handlers.Mouse;
 using osu.Framework.IO.Stores;
 using osu.Framework.Platform;
 using GD.Game.Configuration;
+using osu.Framework.Graphics.Rendering;
 
 namespace GD.Game
 {
     /// <summary>
     /// Set up the relevant resource stores and texture settings.
     /// </summary>
-    public abstract class GDGameBase : osu.Framework.Game
+    public abstract partial class GDGameBase : osu.Framework.Game
     {
         private DependencyContainer dependencies;
 
         private GDConfigManager localConfig;
 
         [BackgroundDependencyLoader]
-        private void load()
+        private void load(IRenderer renderer)
         {
             // Load the assets from our Resources project
             Resources.AddStore(new DllResourceStore(GDResources.ResourceAssembly));
 
-            dependencies.Cache(new LargeTextureStore(Host.CreateTextureLoaderStore(new NamespacedResourceStore<byte[]>(Resources, @"Textures"))));
+            dependencies.Cache(new LargeTextureStore(renderer, Host.CreateTextureLoaderStore(new NamespacedResourceStore<byte[]>(Resources, @"Textures"))));
 
             AddFont(Resources, @"Fonts/Arial");
 
             // Allows colored atlases
-            Fonts.AddStore(new TimedExpiryGlyphStore(Resources, "Fonts/bigFont-uhd"));
-            Fonts.AddStore(new TimedExpiryGlyphStore(Resources, "Fonts/goldFont-uhd"));
+            Fonts.AddTextureSource(new TimedExpiryGlyphStore(Resources, "Fonts/bigFont-uhd"));
+            Fonts.AddTextureSource(new TimedExpiryGlyphStore(Resources, "Fonts/goldFont-uhd"));
 
             dependencies.CacheAs(localConfig);
 

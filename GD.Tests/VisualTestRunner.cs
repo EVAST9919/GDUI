@@ -9,7 +9,7 @@ namespace GD.Tests
         [STAThread]
         public static int Main(string[] args)
         {
-            using (DesktopGameHost host = Host.GetSuitableHost(@"GD-tests", true))
+            using (DesktopGameHost host = Host.GetSuitableDesktopHost(@"GD-tests"))
             {
                 host.Run(new GDTestBrowser());
                 return 0;
